@@ -5,8 +5,8 @@ A pharmacy management system is a web application that helps pharmacies to organ
 
 
 The application includes three user roles:
-* Admin: He is responsible of the crud of the pharmacies in such a city, view cities information …
-* Pharmacy Admin: He is responsible of managing his pharmacy and the medicaments etc…
+* Admin: He is responsible of the crud of the pharmacies in such a city.
+* Pharmacy Admin: He is responsible of managing his pharmacy and the medicaments etcâ€¦
 * Client: He is able to see pharmacies information and the medicaments available is each one of them.
 
 Features:
@@ -32,7 +32,7 @@ Client features:
 * Option to request a specific medicament from a pharmacy, if it is in stock
 
 Technical specifications:
- This project will be built using the following technologies:
+Â This project will be built using the following technologies:
 * HTML 
 * CSS
 * BOOTSRAP

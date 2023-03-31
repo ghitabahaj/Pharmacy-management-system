@@ -78,8 +78,8 @@
           </li>
         </ul>
       </div>
-	  <button type="button"   class="login btn btn-outline-success py-1" style="min-width:100px;border-color:white; color:white;">Login</button>
-	  <button type="button"  class="login btn ms-3 py-1" style="min-width:100px;background-color:#007A69;color:white;">Register</button>
+	  <button type="button"   class="login btn btn-outline-success py-1" style="min-width:100px;border-color:white; color:white;"> <a style="min-width:100px;border-color:white; color:white;"  href="{{ route('login') }}"> Login</a></button>
+	  <button type="button"  class="login btn ms-3 py-1" style="min-width:100px;background-color:#007A69;color:white;"><a style="min-width:100px;background-color:#007A69;color:white;" href="{{ route('register') }}">Register</a> </button>
     </nav>
     <!-- /main nav -->
   </div>

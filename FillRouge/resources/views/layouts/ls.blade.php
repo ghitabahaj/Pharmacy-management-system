@@ -21,66 +21,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-        
-                    <ul class="navbar-nav ms-auto">
-                       
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-    <!-- <div class="col-lg-5 col-md-6 col-11 m-auto d-flex justify-content-between mt-5">
+  <div class="col-lg-5 col-md-6 col-11 m-auto d-flex justify-content-between mt-5">
     <button class="m-auto d-block w-50 p-2 button1 mycolor myborder border-bottom-0" style="border-radius: 5px 5px 0px 0px ;" id="lg-Btn">
         Log In
     </button>
@@ -94,17 +38,36 @@
         <h3 class="text-center">Welcome Back</h3>
         <p class="text-center text-secondary">login with your details to continue</p>
     </div>
+    <form method="POST" action="{{ route('login') }}">
+                        @csrf
     <div class="d-flex flex-column my-3 col-9 m-auto">
         <label class="mb-2" for="email">Email :</label>
-        <input class="border-0 shadow-sm p-2" style="border: 0.3px solid black;" type="email" name="email" id="emailIn" placeholder="Email Address">
+        <input class="border-0 shadow-sm p-2 @error('email') is-invalid @enderror" style="border: 0.3px solid black;" type="email" name="email" value="{{ old('email') }}" id="emailIn" placeholder="Email Address">
+        @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
     </div>
     <div class="d-flex flex-column my-3 col-9 m-auto">
         <label class="mb-2" for="password" >Password :</label>
-        <input class="border-0 shadow-sm p-2" style="border: 0.3px solid black;" type="password" name="password" id="passwordIn" placeholder="Password">
+        <input class="border-0 shadow-sm p-2 @error('password') is-invalid @enderror" style="border: 0.3px solid black;" type="password" name="password"  id="passwordIn" placeholder="Password">
+        @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
     </div>
     <p id="message2" class="text-danger text-center" style="font-size: 10px; margin-bottom: 0px;"></p>
+    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
     <div class="w-100 d-flex flex-column justify-content-center">
-        <button class="my-2 mb-4 text-center w-50 border-0 rounded button1 mycolor py-1 m-auto">Log In</button>
+        <button type="submit" class="my-2 mb-4 text-center w-50 border-0 rounded button1 mycolor py-1 m-auto">Log In</button>
     </div>
 </form>
 
@@ -139,11 +102,6 @@
     </div>
 </form>
 
-<script src="{{asset('js/sign.js') }}" ></script> -->
-
-
-
-
-
+<script src="{{asset('js/sign.js') }}" ></script>
 </body>
 </html>

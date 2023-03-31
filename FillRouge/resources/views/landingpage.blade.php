@@ -32,9 +32,9 @@
 <header class="navigation fixed-top">
   <div class="container ">
     <!-- main nav -->
-    <nav class="navbar navbar-expand-lg navbar-dark px-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-0">
       <!-- logo -->
-      <a class="navbar-brand logo" href="">
+      <a class="navbar-brand logo" href="#">
         <img loading="lazy" class="logo-white" src="/img/logo.png" alt="logo" style="width:120px"/>
       </a>
       <!-- /logo -->
@@ -42,7 +42,7 @@
       <button class="navbar-toggler" type="button"  type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
-	  <ul class="dropdown-menu bg-white mt-5" style="min-width: 100vw;" >
+      <ul class="dropdown-menu bg-white mt-5" style="min-width: 100vw;" >
 		<li class="nav-item " style="margin-left: 60px;">
             <a class="nav-link" style="color:#007A69" href="about.html">About Us</a>
           </li>
@@ -52,51 +52,41 @@
           <li class="nav-item " style="margin-left: 60px;">
             <a class="nav-link"style="color:#007A69" href="portfolio.html">Portfolio</a>
           </li>
-		
 	  </ul>
 	  </div>
 
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav ml-auto text-start ms-5">
-          <li class="nav-item dropdown active">
-            <a class=" nav-link dropdown-toggle" href="#!" id="navbarDropdown"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Features
-            </a>
-            <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color:#007A69">
-              <li><a class="dropdown-item"style="color:#007A69" href="index.html">Homepage</a></li>
-              <li><a class="dropdown-item"style="color:#007A69" href="onepage-slider.html">Onepage</a></li>
-              <li><a class="dropdown-item"style="color:#007A69" href="onepage-text.html">Onepage 2</a></li>
-									
-              <li class="dropdown dropdown-submenu dropright">
-                <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu  <i class="tf-ion-chevron-down"></i></a>
-      
-                <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                  <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-                  <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
-                </ul>
-              </li>
-            </ul> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Features
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else </a></li>
+          </ul>
+        </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="about.html">Pricing</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link"href="about.html">Pricing</a>
+            <a class="nav-link" href="service.html">Community</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link"href="service.html">Community</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link"href="portfolio.html">Support</a>
+            <a class="nav-link" href="portfolio.html">Support</a>
           </li>
         </ul>
       </div>
-	  <button type="button"   class="login btn btn-outline-success py-1" style="min-width:100px;border-color:#007A69;">Login</button>
-	  <button type="button"  class="login btn btn-success ms-3 py-1" style="min-width:100px;background-color:#007A69">Register</button>
+	  <button type="button"   class="login btn btn-outline-success py-1" style="min-width:100px;border-color:white; color:white;">Login</button>
+	  <button type="button"  class="login btn ms-3 py-1" style="min-width:100px;background-color:#007A69;color:white;">Register</button>
     </nav>
     <!-- /main nav -->
   </div>
 </header>
 <!--End Fixed Navigation -->
 <div class="hero-slider">
-	<div class="slider-item th-fullpage hero-area" style="background-image:url(/img/pharmacy.jpg) ;">
+	<div class="slider-item th-fullpage hero-area" style="background-image:url(/img/phar2.png) ;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">

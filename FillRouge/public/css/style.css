@@ -109,7 +109,7 @@ a, a:focus, a:hover {
 }
 
 .navigation .navbar-light .navbar-nav .nav-item .nav-link {
-  color:#007A69;
+  color:#f3f3f3;
   font-size: 14px;
   line-height: 26px;
   padding: 20px 15px;
@@ -122,7 +122,7 @@ a, a:focus, a:hover {
 }
 .navigation .navbar-light .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
   background: none;
-  color: #f1f3f4;
+  color: #1c634d;
 }
 
 
@@ -138,7 +138,7 @@ a, a:focus, a:hover {
     background: #fff;
   }
   .navigation .navbar-light .navbar-nav .nav-item .nav-link {
-    color: #000;
+    color: #dddddd;
   }
   .navigation .navbar-light .navbar-toggler {
     color:#007A69;
@@ -146,6 +146,7 @@ a, a:focus, a:hover {
   }
   .login{
     display: none;
+    color: #ddd;
   }
 }
 
@@ -155,7 +156,7 @@ a, a:focus, a:hover {
 
 .hero-area {
   background-size: cover;
-  height: 100vh;
+  height: 105vh;
   position: relative;
   display: flex;
   justify-content: center;

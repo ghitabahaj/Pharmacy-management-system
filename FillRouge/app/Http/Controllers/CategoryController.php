@@ -9,7 +9,4 @@ class CategoryController extends Controller
     
 
 
-
-
-    
 }

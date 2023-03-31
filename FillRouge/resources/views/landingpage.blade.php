@@ -21,17 +21,21 @@
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
  
-  <link rel="stylesheet" href="css/style.css">
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 </head>
+
+
+
 <body id="body">
 
 <header class="navigation fixed-top">
   <div class="container ">
     <!-- main nav -->
-    <nav class="navbar navbar-expand-lg navbar-light px-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-0">
       <!-- logo -->
-      <a class="navbar-brand logo" href="index.html">
-        <img loading="lazy" class="logo-white" src="img/photos/logo-whitea.png" alt="logo" style="width:150px"/>
+      <a class="navbar-brand logo" href="">
+        <img loading="lazy" class="logo-white" src="/img/logo.png" alt="logo" style="width:120px"/>
       </a>
       <!-- /logo -->
 	  <div class="btn-group dropstart ">
@@ -51,10 +55,6 @@
 		
 	  </ul>
 	  </div>
-
-		
-		  
-	
 
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav ml-auto text-start ms-5">
@@ -94,25 +94,23 @@
     <!-- /main nav -->
   </div>
 </header>
-<!--
-End Fixed Navigation
-====================== -->
+<!--End Fixed Navigation -->
 <div class="hero-slider">
-	<div class="slider-item th-fullpage hero-area" style="background-image: url(img/photos/bg01.jpg);">
+	<div class="slider-item th-fullpage hero-area" style="background-image:url(/img/pharmacy.jpg) ;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h1>Eviter les problèmes  <br>
-						et les retards</h1>
+					<h1>Welcome to Our Pharmacy  <br>
+						System Management</h1>
 					<p>comment est la santé aujourdui, on dirait qu’elle n’est pas bonne !<br> Nevous inquiétez pas. Trouvez votre médcin en ligneRéservez comme vous le souhaitez avec YoucCode Doc.<br> Nous vous offrons un service gratuit de canalisation de médcin, prenez votre rendez-vous maintenant. 
 						</p>
-					<a class="btn btn-main"
-						href="service.html">Make Appointment</a>
+					<a class="btn btn-success"
+						href="service.html">Discover Pharmacies</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="slider-item th-fullpage hero-area" style="background-image: url(img/photos/slider-bg-3.jpeg);">
+	<div class="slider-item th-fullpage hero-area" style="background-image:url(/img/phar.jpg);">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -121,7 +119,7 @@ End Fixed Navigation
 					<p >Create just what you need
 						for your Perfect Website. Choose from a wide range
 						<br> of Elements & simply put them on our Canvas.</p>
-					<a  class="btn btn-main"
+					<a  class="btn btn-success"
 						href="service.html">Explore Us</a>
 				</div>
 			</div>

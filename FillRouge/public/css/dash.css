@@ -28,7 +28,7 @@
  
   #sidebar-wrapper {
     min-height: 100vh;
-    margin-left: -15rem;
+    margin-left: -17rem;
   }
   
   #sidebar-wrapper .sidebar-heading {
@@ -37,7 +37,7 @@
   }
   
   #sidebar-wrapper .list-group {
-    width: 15rem;
+    width: 17rem;
   }
   
   #page-content-wrapper {
@@ -70,7 +70,7 @@
     }
   
     #wrapper.toggled #sidebar-wrapper {
-      margin-left: -15rem;
+      margin-left: -17rem;
     }
   }
 

@@ -12,7 +12,14 @@
                         <p class="text-secondary fs-6">email@emaill.com</p>
                     </div>
                 </div>
-                    <button class="btn btn-lg btn-block btn-light my-3 mycolor button1 fs-6 " type="button">Log out</button> 
+
+                   <div>
+                   <a  class="btn w-100 btn-light my-3 mycolor button1 fs-6" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> Log out</a>
+                                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                       @csrf
+                                                       </form>
+                   </div>                
                 </div>
             <form class="list-group list-group-flush " method="post" action="">
                 <button class="list-group-item list-group-item-action  text-secondary "><i

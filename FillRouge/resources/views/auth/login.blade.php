@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container ">
-    <div class="row justify-content-center">
-        <div class="">
+<div class="container h-100">
+    <div class="row justify-content-center align-items-center h-100">
             <div class="card col-lg-5  col-md-6 col-11 m-auto shadow rounded py-4">
                 <div class=" m-auto d-block w-100 text-center fw-bold fs-3 mycolor border-bottom-0" style="border-radius: 5px 5px 0px 0px ;">{{ __('Login') }}</div>
 
@@ -18,7 +17,7 @@
 
                         <div class="row d-flex flex-column my-3 col-9 m-auto ">
                             <label for="email" class="mb-2">{{ __('Email') }}</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror border-0 shadow-sm p-2" style="border: 0.3px solid black;" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror border-0 shadow-sm p-2" style="border: 0.3px solid black;" placeholder="Your Email Adrress" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -28,7 +27,7 @@
 
                         <div class="d-flex flex-column my-3 col-9 m-auto">
                             <label for="password" class="mb-2">{{ __('Password') }}</label>
-                                <input id="password" type="password" class=" form-control @error('password') is-invalid @enderror border-0 shadow-sm p-2" style="border: 0.3px solid black;" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class=" form-control @error('password') is-invalid @enderror border-0 shadow-sm p-2" style="border: 0.3px solid black;"  placeholder="Enter Your Password" name="password" required autocomplete="current-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -68,7 +67,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection

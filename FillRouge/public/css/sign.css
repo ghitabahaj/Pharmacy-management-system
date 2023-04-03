@@ -19,3 +19,11 @@
 .button1{
     background-color:#CCF2E5;
 }
+
+
+body{
+  height: 100vh;
+}
+#app{
+  height: 100%;
+}

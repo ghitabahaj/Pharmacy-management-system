@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="">
+<div class="container h-100" >
+    <div class="row justify-content-center align-items-center h-100">
             <div class="card col-lg-5  col-md-6 col-11 m-auto shadow rounded py-4">
                 <div class=" m-auto d-block w-100 text-center fw-bold fs-3 mycolor border-bottom-0" style="border-radius: 5px 5px 0px 0px ;">{{ __('Register') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }} " id="RegisterForm">
                         @csrf
@@ -62,7 +60,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection

@@ -25,3 +25,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/pharmacy', function () {
+    return view('pharmacy');
+});

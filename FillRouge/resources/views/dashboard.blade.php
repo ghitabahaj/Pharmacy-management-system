@@ -21,11 +21,11 @@
                                                        </form>
                    </div>                
                 </div>
-            <form class="list-group list-group-flush " method="post" action="">
+            <form class="list-group list-group-flush ">
                 <button class="list-group-item list-group-item-action  text-secondary "><i
-                        class="uil uil-chart-bar fs-4 me-2 p-2"></i>dashboard</button>
+                        class="uil uil-chart-bar fs-4 me-2 p-2"></i><a style=" text-decoration: none; color:grey;" href="#">Dashboard</a></button>
                 <button   class="list-group-item list-group-item-action text-success   fw-bold"><i
-                        class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i>Pharmacy</button>
+                        class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i><a style=" text-decoration: none; color:green;" href="{{ route('pharmacy') }}">Pharmacy</a></button>
                 <button class="list-group-item list-group-item-action  fw-bold text-warning"><i
                         class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i>City</button> 
                         <button class="list-group-item list-group-item-action fw-boldtext-secondary"><i

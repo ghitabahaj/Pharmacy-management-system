@@ -21,14 +21,14 @@
                                                        </form>
                    </div>                
                 </div>
-            <form class="list-group list-group-flush " method="post" action="">
+            <form class="list-group list-group-flush ">
                 <button class="list-group-item list-group-item-action  text-secondary "><i
-                        class="uil uil-chart-bar fs-4 me-2 p-2"></i>dashboard</button>
+                        class="uil uil-chart-bar fs-4 me-2 p-2"></i><a style=" text-decoration: none; color:grey;" href="{{ route('dashboard') }}">Dashboard</a></button>
                 <button   class="list-group-item list-group-item-action text-success   fw-bold"><i
-                        class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i>Pharmacy</button>
+                        class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i><a style=" text-decoration: none; color:green;" href="#">Pharmacy</a></button>
                 <button class="list-group-item list-group-item-action  fw-bold text-warning"><i
                         class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i>City</button> 
-                        <button class="list-group-item list-group-item-action fw-boldtext-secondary"><i
+                        <button class="list-group-item list-group-item-action fw-bold text-secondary"><i
                         class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i>Invoices</button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
                         class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i>Update Account</button>
@@ -59,7 +59,7 @@
                      <div class="w-100 d-flex justify-content-around m-3 align-items-center py-2 ">
                             <div>
                                 <label for="">Search : </label>
-                                <input type="text" class="rounded border-0  px-4 ms-2" name="">
+                                <input type="text" class="rounded border-0  px-4 ms-2" >
                             </div>
                          </div>
                     
@@ -82,7 +82,7 @@
                                                 <td class="text-dark">5</td>
                                                 <td class="text-dark">0564789834</td>
                                                 <td class="text-dark">
-                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-phar" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
+                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-phar" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
                                                     <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-phar" id="view-doctor-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
                                                     <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-phar" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
@@ -148,5 +148,23 @@
                            </div>
                      </div>
                 </div>
+
+
+                <div class="modal fade" id="remove-phar">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                              <form action="" class="p-3">
+                                   <div class="d-flex align-items-center justify-content-center">
+                                       <i class="uil uil-exclamation-triangle fs-1 text-danger me-3"></i>
+                                       <p class="fw-bold pt-3">Are you sure that you want to remove this Pharmacy?</p>
+                                    </div>
+                                    <div class="d-flex justify-content-around w-75 m-auto">
+                                       <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
+                                       <button type="submit" name="" class="btn text-white bg-danger" id="session-save-btn">remove</button>
+                                    </div>
+                               </form>
+                         </div>
+                     </div>
+               </div>
 
 @endsection

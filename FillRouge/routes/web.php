@@ -23,8 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->name('dashboard');
 
 Route::get('/pharmacy', function () {
     return view('pharmacy');
-});
+})->name('pharmacy');

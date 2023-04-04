@@ -28,3 +28,7 @@ Route::get('/dashboard', function () {
 Route::get('/pharmacy', function () {
     return view('pharmacy');
 })->name('pharmacy');
+
+Route::get('/Profile', function () {
+    return view('UpdateProfile');
+})->name('Profile');

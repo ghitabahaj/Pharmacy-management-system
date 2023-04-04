@@ -31,7 +31,7 @@
                         <button class="list-group-item list-group-item-action fw-boldtext-secondary"><i
                         class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i>Invoices</button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
-                        class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i>Update Account</button>
+                        class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a style=" text-decoration: none; color:blue;" href="{{ route('Profile') }}">Update Account</a></button>
                 <button class="list-group-item list-group-item-action fw-bold text-danger"><i
                         class="uil uil-users-alt fs-4 me-2 p-2 text-danger"></i>Give Roles</button> 
             </form>

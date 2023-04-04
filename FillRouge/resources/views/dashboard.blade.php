@@ -66,7 +66,7 @@
                             </table>
                            
                         </div>
-                        <button class="w-100 btn mycolor button1 position-absolute bottom-0 " name="allAppointment" type="submit">Show all Pharmacies</button>
+                        <button class="w-100 btn  position-absolute bottom-0 " style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;" name="allAppointment" type="submit"><a class="text-dark" style=" text-decoration: none;"  href="{{ route('pharmacy') }}">Show all Pharmacies</a> </button>
                         
                         </form>
                         <form method="post" style="width: 49%; height: 25em;" class="position-relative appointment-table rounded shadowborder" >
@@ -85,7 +85,7 @@
                             
                            </table>
                         </div>
-                        <button class="w-100 btn mycolor button1 position-absolute bottom-0" name="allSessions" type="submit">Show all Invoices</button>
+                        <button class="w-100 btn position-absolute bottom-0" style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;"  name="allSessions" type="submit"> <a class="text-dark" style=" text-decoration: none;"  href="">Show all Invoices</a></button>
                         </form>
                   </section>
                 </section>

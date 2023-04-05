@@ -46,7 +46,8 @@
             <div class="modal fade" id="modal-city">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="" method="POST" name="form_add_city">
+                            <form action="{{ url('addCity') }}" method="POST" enctype="multipart/form-data" name="form_add_city">
+                            @csrf
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="add-title">Add New City</h5>
                                     <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -63,11 +64,11 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Number Of Pharmacies</label>
-                                            <input type="text" name="employees" class="form-control" id="employees-num"/>
+                                            <input type="number" name="employees" class="form-control" id="employees-num"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Postal Code</label>
-                                            <input type="text" name="PostalCode" class="form-control" id="Postal-code"/>
+                                            <input type="number" name="PostalCode" class="form-control" id="Postal-code"/>
                                         </div>
                                         
                                 </div>

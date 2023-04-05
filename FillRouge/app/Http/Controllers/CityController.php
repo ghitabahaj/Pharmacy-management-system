@@ -22,5 +22,10 @@ class CityController extends Controller
        return view('city',compact('cities'));     
      
    }
-
+   public function destroyCity(City $City, $id)
+   {
+       City::destroy($id);
+       return redirect()->route('city');
+       
+   }
 }

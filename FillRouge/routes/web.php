@@ -32,3 +32,7 @@ Route::get('/pharmacy', function () {
 Route::get('/Profile', function () {
     return view('UpdateProfile');
 })->name('Profile');
+
+Route::get('/city', function () {
+    return view('city');
+})->name('city');

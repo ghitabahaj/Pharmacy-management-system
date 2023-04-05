@@ -4,7 +4,7 @@
 
       @include('sidebar')
 
-           <section id="doctors" class="container-fluid">
+           <section id="pharmacies" class="container-fluid">
 
                      <h3  class="fw-bold mb-5" style="color: #007A69;"><i class="uil uil-medkit me-2 fs-4" ></i>Pharmacies</h3>
                      <div class="w-100 d-flex justify-content-around m-3 align-items-center py-2 ">
@@ -16,7 +16,7 @@
                     
                         <div class="d-flex justify-content-between">
                             <p class="fs-5 ms-2 fw-bold">All Pharmacies(1)</p>
-                            <button class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-phar" id="add-doctor-btn"><i class="uil uil-plus text-white" onclick=""></i>&emsp; Add Pharamcy</button>
+                            <button class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-phar" id="add-phar-btn"><i class="uil uil-plus text-white" ></i>&emsp; Add Pharamcy</button>
                         </div>
                          <div class="card-body table-responsive mt-2" style="height: 60vh; overflow: scroll;">
                                            <table class="table border-secondary text-center table-hover ">

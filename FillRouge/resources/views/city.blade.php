@@ -36,14 +36,55 @@
                                                 <td class="text-dark">{{$city->PostalCode}}</td>
                                                 <td class="text-dark">
                                                     <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-city" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
-                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-city" data-city-id="{{$city->id}}" id="view-city-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
-                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city" data-city-id="{{$city->id}}" id="remove-city-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
+                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-city{{$loop->iteration}}"  id="view-city-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
+                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city"  id="remove-city-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
                                             </tr>  
-                                            @endforeach   
-                                           </table>
-                            </div>
-            </section>
+                                            <!-- view modal  -->
+
+                                                    <div class="modal fade" id="view-city{{$loop->iteration}}">
+                                                        <div class="modal-dialog">
+                                                            <div class="d-flex justify-content-around align-items-center bg-white p-3 rounded">
+                                                                    <div >
+                                                                    <img class="rounded-circle" src="/img/pharlog.png" width="100px" height="100px" alt="" srcset="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p>City Name : <span class="fw-bold">{{$city->name}}</span></p>
+                                                                        <p>Province: <span class="fw-bold">{{$city->province}}</span></p>
+                                                                    </div>
+                                                                    <div>
+                                                                    <p>Number Of Pharmacies : <span class="fw-bold">{{$city->pharmaciesnum}}</span></p>
+                                                                    <p>Postal Code: <span class="fw-bold">{{$city->PostalCode}}</span></p>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <!--  remove modal  -->
+                                                    <div class="modal fade" id="remove-city">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <form action="" class="p-3">
+                                                                    <div class="d-flex align-items-center justify-content-center">
+                                                                        <i class="uil uil-exclamation-triangle fs-1 text-danger me-3"></i>
+                                                                        <p class="fw-bold pt-3">Are you sure that you want to remove this City?</p>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-around w-75 m-auto">
+                                                                        <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
+                                                                        <button type="submit" name="deleteCity" class="btn text-white bg-danger" id="remove-city">remove</button>
+                                                                        </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                </div>         
+                                                @endforeach   
+                                                                            </table>
+                                                                </div>
+                                                </section>
+
+            
 
             <!-- add modal -->
             <div class="modal fade" id="modal-city">
@@ -84,44 +125,5 @@
                     </div>
                 </div>
 
-                <!-- view modal  -->
-
-                <div class="modal fade" id="view-city">
-                    <div class="modal-dialog">
-                         <div class="d-flex justify-content-around align-items-center bg-white p-3 rounded">
-                                <div >
-                                   <img class="rounded-circle" src="/img/pharlog.png" width="100px" height="100px" alt="" srcset="">
-                                 </div>
-                                <div>
-                                    <p>City Name : <span class="fw-bold">Safi</span></p>
-                                    <p>Province: <span class="fw-bold">Marrakech-Safi</span></p>
-                                </div>
-                                 <div>
-                                   <p>Number Of Pharmacies : <span class="fw-bold">25</span></p>
-                                   <p>Postal Code: <span class="fw-bold">4600</span></p>
-                                 </div>
-                           </div>
-                     </div>
-                </div>
-
-
-
-                <!--  remove modal  -->
-                <div class="modal fade" id="remove-city">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                              <form action="" class="p-3">
-                                   <div class="d-flex align-items-center justify-content-center">
-                                       <i class="uil uil-exclamation-triangle fs-1 text-danger me-3"></i>
-                                       <p class="fw-bold pt-3">Are you sure that you want to remove this City?</p>
-                                    </div>
-                                    <div class="d-flex justify-content-around w-75 m-auto">
-                                       <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
-                                       <button type="submit" name="deleteCity" class="btn text-white bg-danger" id="remove-city">remove</button>
-                                    </div>
-                               </form>
-                         </div>
-                     </div>
-               </div>
-
+                
 @endsection

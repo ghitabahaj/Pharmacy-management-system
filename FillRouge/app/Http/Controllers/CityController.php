@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
-    
+    public function addCity(){
+
+    }
 }

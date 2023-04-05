@@ -20,24 +20,27 @@
                         </div>
                          <div class="card-body table-responsive mt-2" style="height: 60vh; overflow: scroll;">
                                            <table class="table border-secondary text-center table-hover ">
-                                            <tr class="">
+                                            <thead>
                                                 <td class="mycolor fw-bold ">City Name</td>
                                                 <td class="mycolor fw-bold">Province</td>
                                                 <td class="mycolor fw-bold">Number Of Pharmacies</td> 
                                                 <td class="mycolor fw-bold">Postal Code</td>                              
                                                 <td class="mycolor fw-bold">Events</td>
-                                            </tr> 
-                                            <tr class="">
-                                                <td class="text-dark">Safi</td>
-                                                <td class="text-dark">Marrakech-Safi</td>
-                                                <td class="text-dark">20</td>
-                                                <td class="text-dark">46000</td>
+                                            </thead>  
+                                             @foreach ($cities as $city) 
+                                            <tr>
+                                         
+                                                <td class="text-dark">{{$city->name}}</td>
+                                                <td class="text-dark">{{$city->province}}</td>
+                                                <td class="text-dark">{{$city->pharmaciesnum}}</td>
+                                                <td class="text-dark">{{$city->PostalCode}}</td>
                                                 <td class="text-dark">
                                                     <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-city" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
                                                     <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-city" id="view-city-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
                                                     <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
-                                            </tr>     
+                                            </tr>  
+                                            @endforeach   
                                            </table>
                             </div>
             </section>

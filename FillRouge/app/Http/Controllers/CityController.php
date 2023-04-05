@@ -14,4 +14,13 @@ class CityController extends Controller
         $city->save();
         return redirect()->route('city'); 
     }
+
+    public function DisplayCities(){
+
+        $cities=City::all();
+ 
+       return view('city',compact('cities'));     
+     
+   }
+
 }

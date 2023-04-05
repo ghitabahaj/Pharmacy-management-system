@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/addCity',[App\Http\Controllers\CityController::class,'addCity']);
+Route::get('/city',[App\Http\Controllers\CityController::class,'DisplayCities'])->name('city');
 
 
 Route::get('/dashboard', function () {
@@ -35,7 +36,3 @@ Route::get('/pharmacy', function () {
 Route::get('/Profile', function () {
     return view('UpdateProfile');
 })->name('Profile');
-
-Route::get('/city', function () {
-    return view('city');
-})->name('city');

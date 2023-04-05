@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('telephone');
             $table->string('city');
+            $table->string('employees');
         });
     }
 

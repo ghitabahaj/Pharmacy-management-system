@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
-    public function addCity(){
+    public function addCity(Request $request){
         $city = new City();
         $input = $request->all();
         $city->fill($input);

@@ -21,7 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/addCity',[CityController::class,'City']);
+Route::post('/addCity',[App\Http\Controllers\CityController::class,'addCity']);
 
 
 Route::get('/dashboard', function () {

@@ -37,7 +37,7 @@
                                                 <td class="text-dark">
                                                     <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-city" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
                                                     <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-city" data-city-id="{{$city->id}}" id="view-city-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
-                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
+                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city" data-city-id="{{$city->id}}" id="remove-city-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
                                             </tr>  
                                             @endforeach   

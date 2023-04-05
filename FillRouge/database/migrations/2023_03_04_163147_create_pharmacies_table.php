@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('telephone');
-            $table->string('city');
             $table->string('employees');
         });
     }

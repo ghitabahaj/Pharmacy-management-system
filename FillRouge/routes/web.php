@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/addCity',[App\Http\Controllers\CityController::class,'addCity']);
 Route::get('/city',[App\Http\Controllers\CityController::class,'DisplayCities'])->name('city');
-Route::get('delete/{id}', [CityController::class , 'destroyCity']);
+Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete');
 
 
 

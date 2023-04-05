@@ -73,7 +73,7 @@
                                                                         </div>
                                                                         <div class="d-flex justify-content-around w-75 m-auto">
                                                                         <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
-                                                                        <button type="submit" name="deleteCity" class="btn text-white bg-danger" id="remove-city">remove</button>
+                                                                        <button type="submit" name="deleteCity" class="btn text-white bg-danger" id="remove-city"><a style=" text-decoration: none; color:white"  href="{{route('delete',$city->id)}}">remove</a></button>
                                                                         </div>
                                                                 </form>
                                                             </div>

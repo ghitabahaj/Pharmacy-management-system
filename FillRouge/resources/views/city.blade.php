@@ -56,15 +56,15 @@
                                         <input type="hidden" id="city-id">
                                         <div class="mb-3">
                                             <label class="form-label">City Name</label>
-                                            <input type="text" name="cityname" class="form-control" id="city-name"/>
+                                            <input type="text" name="name" class="form-control" id="city-name"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Province</label>
-                                            <input type="text" name="cityProvince" class="form-control" id="city-pro"/>
+                                            <input type="text" name="province" class="form-control" id="city-pro"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Number Of Pharmacies</label>
-                                            <input type="number" name="employees" class="form-control" id="employees-num"/>
+                                            <input type="number" name="pharmaciesnum" class="form-control" id="employees-num"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Postal Code</label>

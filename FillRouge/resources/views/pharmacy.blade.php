@@ -27,17 +27,19 @@
                                                 <td class="mycolor fw-bold">Number Phone</td>
                                                 <td class="mycolor fw-bold">Events</td>
                                             </thead> 
+                                            @foreach ($pharmacies as $phar) 
                                             <tr>
-                                                <td class="text-dark">Pharmacy</td>
-                                                <td class="text-dark">Safi</td>
-                                                <td class="text-dark">5</td>
-                                                <td class="text-dark">0564789834</td>
+                                                <td class="text-dark">{{$phar->name}}</td>
+                                                <td class="text-dark">{{$phar->location}}</td>
+                                                <td class="text-dark">{{$phar->employees}}</td>
+                                                <td class="text-dark">{{$phar->telephone}}</td>
                                                 <td class="text-dark">
                                                     <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-phar" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
                                                     <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-phar" id="view-doctor-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
                                                     <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-phar" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
-                                            </tr>     
+                                            </tr> 
+                                            @endforeach    
                                            </table>
                             </div>
             </section>
@@ -63,7 +65,7 @@
                                              <select class="form-select" name="cities" id="cities" form="cityform">
                                                     <option selected>Open this select menu</option>
                                                     @foreach ($pharmacies as $phar) 
-                                                    <option value="{{$phar->city}}">{{$city->phar}}</option>
+                                                    <option value="{{$phar->city}}">{{$phar->city}}</option>
                                                     @endforeach
                                             </select>
                                         </div>

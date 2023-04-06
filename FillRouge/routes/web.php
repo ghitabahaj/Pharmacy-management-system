@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\PharmacyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::post('/addCity',[App\Http\Controllers\CityController::class,'addCity']);
 Route::get('/city',[App\Http\Controllers\CityController::class,'DisplayCities'])->name('city');
 Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete');
 Route::post('/addPharmacy',[App\Http\Controllers\PharamcyController::class,'addPharmacy']);
-Route::get('/pharmacy',[App\Http\Controllers\PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
+Route::get('/pharmacy',[PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
 
 
 

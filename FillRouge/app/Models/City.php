@@ -12,7 +12,7 @@ class City extends Model
 
     protected $fillable = ['name','province','pharmaciesnum','PostalCode'];
 
-    public function Pharmacies()
+    public function Pharmacy()
     {
         return $this->hasMany(Pharmacy::class);
     }

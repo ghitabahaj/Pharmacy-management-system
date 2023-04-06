@@ -27,6 +27,8 @@ Route::get('/city',[App\Http\Controllers\CityController::class,'DisplayCities'])
 Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete');
 Route::post('/addPharmacy',[PharmacyController::class,'addPharmacy']);
 Route::get('/pharmacy',[PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
+Route::get('deletePhar/{id}', [PharmacyController::class , 'destroyPharmacy'])->name('deletePhar');
+
 
 
 

@@ -64,8 +64,8 @@
                                             <label class="form-label">Choose Pharmacy City / location </label>
                                              <select class="form-select" name="cities" id="cities" form="cityform">
                                                     <option selected>Open this select menu</option>
-                                                    @foreach ($pharmacies as $phar) 
-                                                    <option value="{{$phar->city}}">{{$phar->city}}</option>
+                                                    @foreach ($cities as $city) 
+                                                    <option value="{{$city->name}}">{{$city->name}}</option>
                                                     @endforeach
                                             </select>
                                         </div>

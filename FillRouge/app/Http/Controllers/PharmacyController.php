@@ -20,9 +20,11 @@ class PharmacyController extends Controller
 
         $pharmacies=Pharmacy::all();
         $cities = City::all();
-       return view('pharmacy',compact('pharmacies','cities'));     
-     
+        $countPhar= Pharmacy::count();
+       return view('pharmacy',compact('pharmacies','cities'));       
    }
+
+   
    public function destroyPharmacy(Pharmacy $Pharmacy, $id)
    {
        Pharmacy::destroy($id);

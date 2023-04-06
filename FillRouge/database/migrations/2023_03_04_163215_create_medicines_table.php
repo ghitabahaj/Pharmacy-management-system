@@ -15,9 +15,14 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('label');
+            $table->integer('category_id');
             $table->date('expiration_date');
             $table->integer('quantity');
             $table->float('price', 8, 4);
+            $table->foreign('category_id')
+            ->references('id')->on('categories');
+      
+
 
         });
     }

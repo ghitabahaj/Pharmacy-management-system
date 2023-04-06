@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('location');
+            $table->string('city_id');
             $table->string('telephone');
-            $table->string('employees');
+            $table->integer('employees');
+            $table->foreign('city_id')
+            ->references('id')->on('cities');
+
+
         });
     }
 

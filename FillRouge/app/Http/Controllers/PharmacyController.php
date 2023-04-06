@@ -21,10 +21,10 @@ class PharmacyController extends Controller
         $pharmacies=Pharmacy::all();
         $cities = City::all();
         $countPhar= Pharmacy::count();
-       return view('pharmacy',compact('pharmacies','cities'));       
+       return view('pharmacy',compact('pharmacies','cities','countPhar'));       
    }
 
-   
+
    public function destroyPharmacy(Pharmacy $Pharmacy, $id)
    {
        Pharmacy::destroy($id);
@@ -34,7 +34,8 @@ class PharmacyController extends Controller
 
    public function lastPharmacies(){
     $lastPhar = Pharmacy::latest()->take(10)->get();
-    return view('dashboard',compact('lastPhar'));   
+    $countPhar= Pharmacy::count();
+    return view('dashboard',compact('lastPhar','countPhar'));   
    }
 
 

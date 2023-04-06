@@ -15,7 +15,7 @@
                          </div>
                     
                         <div class="d-flex justify-content-between">
-                            <p class="fs-5 ms-2 fw-bold">All Pharmacies(1)</p>
+                            <p class="fs-5 ms-2 fw-bold">All Pharmacies({{$countPhar}})</p>
                             <button class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-phar" id="add-phar-btn"><i class="uil uil-plus text-white" ></i>&emsp; Add Pharamcy</button>
                         </div>
                          <div class="card-body table-responsive mt-2" style="height: 60vh; overflow: scroll;">

@@ -28,15 +28,8 @@ Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete
 Route::post('/addPharmacy',[PharmacyController::class,'addPharmacy']);
 Route::get('/pharmacy',[PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
 Route::get('deletePhar/{id}', [PharmacyController::class , 'destroyPharmacy'])->name('deletePhar');
+Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
 
-
-
-
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 
 Route::get('/Profile', function () {

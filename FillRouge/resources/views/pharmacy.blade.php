@@ -30,7 +30,7 @@
                                             @foreach ($pharmacies as $phar) 
                                             <tr>
                                                 <td class="text-dark">{{$phar->name}}</td>
-                                                <td class="text-dark">{{$phar->location}}</td>
+                                                <td class="text-dark">{{$phar->city->name}}</td>
                                                 <td class="text-dark">{{$phar->employees}}</td>
                                                 <td class="text-dark">{{$phar->telephone}}</td>
                                                 <td class="text-dark">
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Choose Pharmacy City / location </label>
-                                             <select class="form-select" name="city" id="city" required>
+                                             <select class="form-select" name="city_id" id="city" required>
                                                     <option selected>Open this select menu</option>
                                                     @foreach ($cities as $city) 
                                                     <option value="{{$city->id}}">{{$city->name}}</option>

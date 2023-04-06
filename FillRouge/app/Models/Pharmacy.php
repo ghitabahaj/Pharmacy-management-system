@@ -9,17 +9,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Pharmacy extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'name',
         'employees' ,
         'telephone',
-        'location'
+        'city_id'
 
     ];
 
-    public function cities()
+    public function city()
     {
-        return $this->BelongsTo(City::class);
+        return $this->belongsTo(City::class);
     }
 }

@@ -47,7 +47,7 @@
              <div class="modal fade" id="modal-phar">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="" method="POST" name="form_add_phar">
+                            <form action="{{ url('addPharmacy') }}" method="POST" name="form_add_phar">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="add-title">Add New Pharmacy</h5>
                                     <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -59,8 +59,13 @@
                                             <input type="text" name="doctorname" class="form-control" id="doctor-name"/>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Pharmacy City / location </label>
-                                            <input type="text" name="pharCity" class="form-control" id="phar-city"/>
+                                            <label class="form-label">Choose Pharmacy City / location </label>
+                                             <select class="form-select" name="cities" id="cities" form="cityform">
+                                                    <option selected>Open this select menu</option>
+                                                    @foreach ($pharmacies as $phar) 
+                                                    <option value="{{$phar->city}}">{{$city->phar}}</option>
+                                                    @endforeach
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Number Of Employees</label>

@@ -35,3 +35,8 @@ Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('das
 Route::get('/Profile', function () {
     return view('UpdateProfile');
 })->name('Profile');
+
+
+Route::get('/invoice', function () {
+    return view('invoice');
+})->name('invoice');

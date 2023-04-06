@@ -49,7 +49,8 @@
              <div class="modal fade" id="modal-phar">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="{{ url('addPharmacy') }}" method="POST" name="form_add_phar">
+                            <form action="{{ url('addPharmacy') }}" method="POST" enctype="multipart/form-data" name="form_add_phar">
+                             @csrf
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="add-title">Add New Pharmacy</h5>
                                     <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -58,11 +59,11 @@
                                         <input type="hidden" id="pharmacy-id">
                                         <div class="mb-3">
                                             <label class="form-label">Pharmacy Name</label>
-                                            <input type="text" name="doctorname" class="form-control" id="doctor-name"/>
+                                            <input type="text" name="name" class="form-control" id="name"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Choose Pharmacy City / location </label>
-                                             <select class="form-select" name="cities" id="cities" form="cityform">
+                                             <select class="form-select" name="location" id="cities" form="cityform">
                                                     <option selected>Open this select menu</option>
                                                     @foreach ($cities as $city) 
                                                     <option value="{{$city->name}}">{{$city->name}}</option>
@@ -71,11 +72,11 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Number Of Employees</label>
-                                            <input type="text" name="speciality" class="form-control" id="doctor-speciality"/>
+                                            <input type="number" name="employees" class="form-control" id="employees"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Phone Number</label>
-                                            <input type="text" name="doctornumber" class="form-control" id="doctornumber"/>
+                                            <input type="number" name="telephone" class="form-control" id="telephone"/>
                                         </div>
                                         
                                 </div>

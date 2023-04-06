@@ -13,7 +13,7 @@ class CityController extends Controller
         $city->fill($input);
         $city->save();
         return redirect()->route('city'); 
-    }
+    } 
 
     public function DisplayCities(){
 
@@ -26,6 +26,6 @@ class CityController extends Controller
    {
        City::destroy($id);
        return redirect()->route('city');
-       
+
    }
 }

@@ -20,14 +20,14 @@
                         </div>
                          <div class="card-body table-responsive mt-2" style="height: 60vh; overflow: scroll;">
                                            <table class="table border-secondary text-center table-hover ">
-                                            <tr class="">
+                                            <thead>
                                                 <td class="mycolor fw-bold ">Pharmacy Name</td>
                                                 <td class="mycolor fw-bold">City / Location</td>
                                                 <td class="mycolor fw-bold">Number Of Employees</td>
                                                 <td class="mycolor fw-bold">Number Phone</td>
                                                 <td class="mycolor fw-bold">Events</td>
-                                            </tr> 
-                                            <tr class="">
+                                            </thead> 
+                                            <tr>
                                                 <td class="text-dark">Pharmacy</td>
                                                 <td class="text-dark">Safi</td>
                                                 <td class="text-dark">5</td>

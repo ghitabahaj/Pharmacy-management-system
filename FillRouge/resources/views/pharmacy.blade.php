@@ -82,48 +82,48 @@
 
 
 
-             <div class="modal fade" id="modal-phar">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <form action="{{ url('addPharmacy') }}" method="POST" enctype="multipart/form-data" name="form_add_phar">
-                             @csrf
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="add-title">Add New Pharmacy</h5>
-                                    <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
-                                </div>
-                                <div class="modal-body">
-                                        <input type="hidden" id="pharmacy-id">
-                                        <div class="mb-3">
-                                            <label class="form-label">Pharmacy Name</label>
-                                            <input type="text" name="name" class="form-control" id="name"/>
+                                    <div class="modal fade" id="modal-phar">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <form action="{{ url('addPharmacy') }}" method="POST" enctype="multipart/form-data" name="form_add_phar">
+                                                    @csrf
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="add-title">Add New Pharmacy</h5>
+                                                            <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                                <input type="hidden" id="pharmacy-id">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Pharmacy Name</label>
+                                                                    <input type="text" name="name" class="form-control" id="name"/>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Choose Pharmacy City / location </label>
+                                                                    <select class="form-select" name="city_id" id="city" required>
+                                                                            <option selected>Open this select menu</option>
+                                                                            @foreach ($cities as $city) 
+                                                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                                                            @endforeach
+                                                                    </select>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Number Of Employees</label>
+                                                                    <input type="number" name="employees" class="form-control" id="employees"/>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Phone Number</label>
+                                                                    <input type="number" name="telephone" class="form-control" id="telephone"/>
+                                                                </div>
+                                                                
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+                                                            <button type="submit" name="savePhar" class="btn btn-primary" id="phar-save-btn">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Choose Pharmacy City / location </label>
-                                             <select class="form-select" name="city_id" id="city" required>
-                                                    <option selected>Open this select menu</option>
-                                                    @foreach ($cities as $city) 
-                                                    <option value="{{$city->id}}">{{$city->name}}</option>
-                                                    @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Number Of Employees</label>
-                                            <input type="number" name="employees" class="form-control" id="employees"/>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Phone Number</label>
-                                            <input type="number" name="telephone" class="form-control" id="telephone"/>
-                                        </div>
-                                        
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
-                                    <button type="submit" name="savePhar" class="btn btn-primary" id="phar-save-btn">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
 
               

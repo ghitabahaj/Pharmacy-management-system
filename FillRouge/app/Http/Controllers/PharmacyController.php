@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\City;
 use App\Models\Pharmacy;
 use Illuminate\Http\Request;
+use App\Models\City;
 
 class PharmacyController extends Controller
 {

@@ -32,7 +32,7 @@ class PharmacyController extends Controller
 
    public function lastPharmacies(){
     $lastPhar = Pharmacy::latest()->take(10)->get();
-    return view('dashboard',compact('pharmacies'));   
+    return view('dashboard',compact('lastPhar'));   
    }
 
 

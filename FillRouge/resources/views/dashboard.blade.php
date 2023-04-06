@@ -57,12 +57,20 @@
                            background-position: bottom;
                            ">
                             <table class="table border-secondary text-center table-hover ">
-                                <tr class="">
+                                <thead>
                                     <td class="mycolor fw-bold ">Pharmacy number</td>
                                     <td class="mycolor fw-bold">Pharmacy name</td>
                                     <td class="mycolor fw-bold">City</td>
                                     <td class="mycolor fw-bold">Employees number</td>
-                                </tr>     
+                              </thead>  
+                                 @foreach ($lastPhar as $pharmacy) 
+                                            <tr>
+                                            <td class="text-dark">{{$loop->iteration}}</td>
+                                            <td class="text-dark">{{$pharmacy->name}}</td>
+                                            <td class="text-dark">{{$pharmacy->city->name}}</td>
+                                            <td class="text-dark">{{$pharmacy->employees}}</td>
+                                           </tr>
+                                @endforeach
                             </table>
                            
                         </div>

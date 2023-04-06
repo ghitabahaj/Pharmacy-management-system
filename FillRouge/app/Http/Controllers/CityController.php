@@ -18,14 +18,15 @@ class CityController extends Controller
     public function DisplayCities(){
 
         $cities=City::all();
+        $countCities= City::count();
  
-       return view('city',compact('cities'));     
+       return view('city',compact('cities','countCities'));     
      
    }
    public function destroyCity(City $City, $id)
    {
        City::destroy($id);
        return redirect()->route('city');
-
    }
+
 }

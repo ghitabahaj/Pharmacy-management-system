@@ -35,7 +35,9 @@ class PharmacyController extends Controller
    public function lastPharmacies(){
     $lastPhar = Pharmacy::latest()->take(10)->get();
     $countPhar= Pharmacy::count();
-    return view('dashboard',compact('lastPhar','countPhar'));   
+    $countCities= City::count();
+
+    return view('dashboard',compact('lastPhar','countPhar','countCities'));   
    }
 
 

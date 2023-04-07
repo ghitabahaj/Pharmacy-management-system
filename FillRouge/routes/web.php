@@ -22,13 +22,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/addCity',[App\Http\Controllers\CityController::class,'addCity']);
-Route::get('/city',[App\Http\Controllers\CityController::class,'DisplayCities'])->name('city');
+Route::post('/addCity',[CityController::class,'addCity']);
+Route::get('/city',[CityController::class,'DisplayCities'])->name('city');
 Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete');
 Route::post('/addPharmacy',[PharmacyController::class,'addPharmacy']);
 Route::get('/pharmacy',[PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
 Route::get('deletePhar/{id}', [PharmacyController::class , 'destroyPharmacy'])->name('deletePhar');
+Route::post('UpdatePharmacy/{id}', [PharmacyController::class , 'updatePharmacy'])->name('UpdatePhar');
 Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
+Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('UpdateCity');
+
 
 
 

@@ -33,13 +33,24 @@ class PharmacyController extends Controller
    }
 
    public function lastPharmacies(){
-    $lastPhar = Pharmacy::latest()->take(10)->get();
+    $lastPhar = Pharmacy::latest()->take(4)->get();
     $countPhar= Pharmacy::count();
     $countCities= City::count();
 
     return view('dashboard',compact('lastPhar','countPhar','countCities'));   
    }
 
+   public function updatePharmacy(Request $request,$id)
+   {
+
+      $updatePhar=Pharmacy::find($id);
+      $input = $request->all();
+      $updatePhar->fill($input);
+
+      $updatePhar->save();
+    
+       return redirect()->route('pharmacy');
+   }
 
 
 }

@@ -34,13 +34,15 @@
                                                 <td class="text-dark">{{$phar->employees}}</td>
                                                 <td class="text-dark">{{$phar->telephone}}</td>
                                                 <td class="text-dark">
-                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-phar" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
-                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-phar" id="view-doctor-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
-                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-phar" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
+                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-phar{{$loop->iteration}}" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
+                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-phar{{$loop->iteration}}" id="view-doctor-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
+                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-phar{{$loop->iteration}}" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
                                             </tr>
+
+                                            <!-- view pharmacy info -->
                                                                             
-                                        <div class="modal fade" id="view-phar">
+                                        <div class="modal fade" id="view-phar{{$loop->iteration}}">
                                                     <div class="modal-dialog">
                                                         <div class="d-flex justify-content-around align-items-center bg-white p-3 rounded">
                                                                 <div >
@@ -58,8 +60,9 @@
                                                     </div>
                                                 </div>
 
+                                       <!-- remove pharmacy -->
 
-                                         <div class="modal fade" id="remove-phar">
+                                         <div class="modal fade" id="remove-phar{{$loop->iteration}}">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <form action="" class="p-3">
@@ -75,6 +78,53 @@
                                                         </div>
                                                     </div>
                                             </div>
+
+                                            <!-- edit phar -->
+
+                                            <div class="modal fade" id="update-phar{{$loop->iteration}}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <form action="{{ route('UpdatePhar',$phar->id) }}" method="POST" enctype="multipart/form-data" name="form_add_phar">
+                                                    @csrf
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="add-title">Update Pharmacy</h5>
+                                                            <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                                <input type="hidden" id="pharmacy-id">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Pharmacy Name</label>
+                                                                    <input type="text" name="name" class="form-control" id="name" value="{{$phar->name}}"/>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Choose Pharmacy City / location </label>
+                                                                    <select class="form-select" name="city_id" id="city" required>
+                                                                            <option selected>{{$phar->city->name}}</option>
+                                                                            @foreach ($cities as $city) 
+                                                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                                                            @endforeach
+                                                                    </select>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Number Of Employees</label>
+                                                                    <input type="number" name="employees" class="form-control" id="employees"  value="{{$phar->employees}}"/>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Phone Number</label>
+                                                                    <input type="number" name="telephone" class="form-control" id="telephone"  value="{{$phar->telephone}}"/>
+                                                                </div>
+                                                                
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+                                                            <button type="submit" name="UpdatePhar" class="btn btn-warning text-white" id="phar-update-btn">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                             @endforeach  
                                            </table>
                             </div>  

@@ -29,4 +29,16 @@ class CityController extends Controller
        return redirect()->route('city');
    }
 
+   public function updateCity(Request $request,$id)
+   {
+
+      $updateCity=City::find($id);
+      $input = $request->all();
+      $updateCity->fill($input);
+
+      $updateCity->save();
+    
+       return redirect()->route('city');
+   }
+
 }

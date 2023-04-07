@@ -35,9 +35,9 @@
                                                 <td class="text-dark">{{$city->pharmaciesnum}}</td>
                                                 <td class="text-dark">{{$city->PostalCode}}</td>
                                                 <td class="text-dark">
-                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-city" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
+                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-city{{$loop->iteration}}" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
                                                     <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-city{{$loop->iteration}}"  id="view-city-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
-                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city"  id="remove-city-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
+                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-city{{$loop->iteration}}"  id="remove-city-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
                                             </tr>  
                                             <!-- view modal  -->
@@ -63,7 +63,7 @@
 
 
                                                     <!--  remove modal  -->
-                                                    <div class="modal fade" id="remove-city">
+                                                    <div class="modal fade" id="remove-city{{$loop->iteration}}">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <form class="p-3">
@@ -79,10 +79,50 @@
                                                             </div>
                                                         </div>
                                                 </div>         
-                                                @endforeach   
-                                                                            </table>
+
+                                                <!-- edit modal -->
+
+                                                <div class="modal fade" id="update-city{{$loop->iteration}}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <form action="{{ route('UpdateCity',$city->id) }}" method="POST" enctype="multipart/form-data" name="form_update_city" id="form_update_city">
+                                                            @csrf
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="add-title">Update City</h5>
+                                                                    <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
                                                                 </div>
-                                                </section>
+                                                                <div class="modal-body">
+                                                                        <input type="hidden" id="city-id">
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label">City Name</label>
+                                                                            <input type="text" name="name" class="form-control" id="city-name" value="{{$city->name}}"/>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label">Province</label>
+                                                                            <input type="text" name="province" class="form-control" id="city-pro" value="{{$city->province}}"/>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label">Number Of Pharmacies</label>
+                                                                            <input type="number" name="pharmaciesnum" class="form-control" id="employees-num" value="{{$city->pharmaciesnum}}"/>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label">Postal Code</label>
+                                                                            <input type="number" name="PostalCode" class="form-control" id="Postal-code" value="{{$city->PostalCode}}"/>
+                                                                        </div>
+                                                                        
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+                                                                    <button type="submit" name="updateCity" class="btn btn-warning text-white" id="city-update-btn">Update</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach   
+                                     </table>
+                            </div>
+             </section>
 
             
 

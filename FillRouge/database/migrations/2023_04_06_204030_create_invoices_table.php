@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->string('clientName');
+            $table->float('total',8,4);
+            $table->string('medicine_id');
+            $table->foreign('medicine_id')
+            ->references('id')->on('medicines');
             $table->timestamps();
         });
     }

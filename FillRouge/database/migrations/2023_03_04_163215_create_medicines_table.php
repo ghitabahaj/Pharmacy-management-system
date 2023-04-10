@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('label');
+            $table->string('Provider');
             $table->integer('category_id');
             $table->date('expiration_date');
             $table->integer('quantity');

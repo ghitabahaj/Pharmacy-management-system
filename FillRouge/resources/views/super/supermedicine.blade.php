@@ -1,8 +1,8 @@
-extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 
-      @include('super.sidebar')
+      @include('super.supersidebar')
 
            <section id="medicines" class="container-fluid">
 
@@ -28,22 +28,22 @@ extends('layouts.app')
                                                 <td class="mycolor fw-bold">Expiration Date</td>
                                                 <td class="mycolor fw-bold">Events</td>
                                             </thead> 
-                                            @foreach () 
                                             <tr>
                                                 <td class="text-dark"></td>
                                                 <td class="text-dark"></td>
                                                 <td class="text-dark"></td>
                                                 <td class="text-dark"></td>
+                                                <td class="text-dark"></td>
                                                 <td class="text-dark">
-                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-med{{$loop->iteration}}" ><i class="text-white me-1 uil uil-pen"></i>Edit</button>
-                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-med{{$loop->iteration}}" ><i class="text-dark me-1 uil uil-eye"></i>view</button>
-                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-med{{$loop->iteration}}"><i class="text-white me-1 uil uil-trash"></i>remove</button>
+                                                    <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-med" ><i class="text-white me-1 uil uil-pen"></i>Edit</button>
+                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-med" ><i class="text-dark me-1 uil uil-eye"></i>view</button>
+                                                    <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-med"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
                                             </tr>
 
                                             <!-- view pharmacy info -->
                                                                             
-                                        <div class="modal fade" id="view-med{{$loop->iteration}}">
+                                        <div class="modal fade" id="view-med">
                                                     <div class="modal-dialog">
                                                         <div class="d-flex justify-content-around align-items-center bg-white p-3 rounded">
                                                                 <div >
@@ -67,7 +67,7 @@ extends('layouts.app')
 
                                        <!-- remove pharmacy -->
 
-                                         <div class="modal fade" id="remove-med{{$loop->iteration}}">
+                                         <div class="modal fade" id="remove-med">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <form action="" class="p-3">
@@ -86,7 +86,7 @@ extends('layouts.app')
 
                                             <!-- edit phar -->
 
-                                            <div class="modal fade" id="update-med{{$loop->iteration}}">
+                                            <div class="modal fade" id="update-med">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <form action="" method="POST" enctype="multipart/form-data" name="form_add_phar">
@@ -104,9 +104,9 @@ extends('layouts.app')
                                                                     <label class="form-label">Choose Medicine Category </label>
                                                                     <select class="form-select" name="category_id" id="category" required>
                                                                             <option selected></option>
-                                                                            @foreach () 
+                                                                          
                                                                             <option value=""></option>
-                                                                            @endforeach
+                                                                          
                                                                     </select>
                                                                 </div>
                                                                 <div class="mb-3">
@@ -133,7 +133,7 @@ extends('layouts.app')
                                         </div>
 
 
-                                            @endforeach  
+                                       
                                            </table>
                             </div>  
             </section>
@@ -158,9 +158,9 @@ extends('layouts.app')
                                                                     <label class="form-label">Choose Medicine Category </label>
                                                                     <select class="form-select" name="category_id" id="category" required>
                                                                             <option selected>Open this select menu</option>
-                                                                            @foreach () 
+                                                                        
                                                                             <option value=""></option>
-                                                                            @endforeach
+                                                                       
                                                                     </select>
                                                                 </div>
                                                                 <div class="mb-3">

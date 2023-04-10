@@ -33,7 +33,8 @@ Route::post('UpdatePharmacy/{id}', [PharmacyController::class , 'updatePharmacy'
 Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
 Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('UpdateCity');
 Route::get('/Profile',[UserController::class,'index'])->name('Profile');
-Route::put('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
+Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
+Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
 
 
 

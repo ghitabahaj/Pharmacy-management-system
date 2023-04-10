@@ -60,8 +60,9 @@
                      <div class="modal fade" id="update-password">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
-                                                            <form action="{{ route('UpdatePass'}}" method="POST" enctype="multipart/form-data" >
+                                                            <form action="{{ route('UpdatePass')}}" method="POST" >
                                                             @csrf  
+                                    
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="add-title">Update Password</h5>
                                                                     <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -93,7 +94,7 @@
                      <div class="modal fade" id="update-email">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
-                                                            <form action="" method="POST" enctype="multipart/form-data" >
+                                                            <form action="{{route('UpdateProfile')}}" method="POST" >
                                                             @csrf
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="add-title">Update Email / Name</h5>
@@ -102,11 +103,11 @@
                                                                 <div class="modal-body">
                                                                         <div class="mb-3">
                                                                         <label class="mt-3">Name</label>
-                                                                        <input type="text" class="form-control" name="name" value={{$data->name}}>
+                                                                        <input type="text" class="form-control" name="name" value="{{$data->name}}">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                         <label class="mt-3">Email</label>
-                                                                        <input type="email" class="form-control" name="email" value={{$data->email}}>
+                                                                        <input type="email" class="form-control" name="email" value="{{$data->email}}">
                                                                         </div>                                                                                                  
                                                                 </div>
                                                                 <div class="modal-footer">

@@ -5,6 +5,16 @@
         @include('sidebar')
 
     <section class="content_section" id="admin_settings_section">
+    @if(session('success'))
+    <div class="alert alert-success m-3">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if(session('error'))
+    <div class="alert alert-danger m-2">
+        {{ session('error') }}
+    </div>
+    @endif
            <div class="row m-4"> 
         <button class="p-3 shadow-sm d-flex bg-light justify-content-start align-items-center rounded border" data-bs-toggle="modal" data-bs-target="#update-profile">
             <i class="uil uil-medkit fs-3 mycolor box rounded py-4 px-4 my-2 mx-4"></i>

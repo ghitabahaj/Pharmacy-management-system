@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PharmacyController;
 
 /*
@@ -31,13 +32,14 @@ Route::get('deletePhar/{id}', [PharmacyController::class , 'destroyPharmacy'])->
 Route::post('UpdatePharmacy/{id}', [PharmacyController::class , 'updatePharmacy'])->name('UpdatePhar');
 Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
 Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('UpdateCity');
+Route::get('/Profile',[UserController::class,'index'])->name('Profile');
+Route::put('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
 
 
 
 
-Route::get('/Profile', function () {
-    return view('UpdateProfile');
-})->name('Profile');
+
+
 
 
 Route::get('/invoice', function () {

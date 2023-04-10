@@ -23,7 +23,7 @@
                 <button   class="list-group-item list-group-item-action text-success   fw-bold"><i
                         class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i><a style=" text-decoration: none; color:green;" href="{{ route('medicine') }}">Medicine</a></button>
                 <button class="list-group-item list-group-item-action  fw-bold "><i
-                        class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i><a class="text-warning" style=" text-decoration: none; " href="">Category</a></button> 
+                        class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i><a class="text-warning" style=" text-decoration: none; " href="{{ route('category') }}">Category</a></button> 
                         <button class="list-group-item list-group-item-action fw-bold"><i
                         class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i><a class="text-secondary" style=" text-decoration: none;" href="">Invoices</a></button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i

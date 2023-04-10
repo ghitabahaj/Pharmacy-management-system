@@ -21,7 +21,6 @@ class CityController extends Controller
         $countCities= City::count();
  
        return view('city',compact('cities','countCities'));     
-     
    }
    public function destroyCity(City $City, $id)
    {

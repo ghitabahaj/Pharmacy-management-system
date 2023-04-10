@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PharmacyController;
 
 /*
@@ -35,6 +36,11 @@ Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('Upda
 Route::get('/Profile',[UserController::class,'index'])->name('Profile');
 Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
 Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
+Route::get('/category',[CategoryController::class,'DisplayCategories'])->name('category');
+Route::post('/addCategory',[CategoryController::class,'addCategory']);
+Route::get('deleteCategory/{id}', [CategoryController::class , 'destroyCat'])->name('deleteCategory');
+
+
 
 
 

@@ -73,7 +73,7 @@
                                                             <form action="" class="p-3">
                                                                 <div class="d-flex align-items-center justify-content-center">
                                                                     <i class="uil uil-exclamation-triangle fs-1 text-danger me-3"></i>
-                                                                    <p class="fw-bold pt-3">Are you sure that you want to remove this Pharmacy?</p>
+                                                                    <p class="fw-bold pt-3">Are you sure that you want to remove this Medicine?</p>
                                                                     </div>
                                                                     <div class="d-flex justify-content-around w-75 m-auto">
                                                                     <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
@@ -89,7 +89,7 @@
                                             <div class="modal fade" id="update-med">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <form action="" method="POST" enctype="multipart/form-data" name="form_add_phar">
+                                                    <form action="" method="POST" enctype="multipart/form-data" name="form_add_med">
                                                     @csrf
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="add-title">Update Medicine</h5>

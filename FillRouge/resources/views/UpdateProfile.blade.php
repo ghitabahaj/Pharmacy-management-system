@@ -81,15 +81,19 @@
                                                                         <div class="mb-3">
                                                                             <label class="mt-3">Old Password</label>
                                                                             <input type="password" class="form-control" name="old_password" id="myInput">
+                                                                            <input type="checkbox" onclick="myFunction1()" class="mt-1 me-1">Show Password
                                                                         </div>
                                                                         <div class="mb-3">
                                                                         <label class="mt-3">New Password</label>
                                                                         <input type="password" class="form-control" name="new_password" id="myInput1">
+                                                                        <input type="checkbox" onclick="myFunction2()" class="mt-1 me-1">Show Password
                                                                         </div>
                                                                         <div class="mb-3">
                                                                         <label class="mt-3">Confirm Password</label>
-                                                                         <input type="password" class="form-control" name="confirm_password" id="myInput2">
-                                                                        </div>                                         
+                                                                         <input type="password" class="form-control" name="confirm_password" id="confirm_password">
+                                                                         <input type="checkbox" onclick="myFunction3()" class="mt-1 me-1">Show Password
+                                                                         <div id="error" class="text-danger"></div>  
+                                                            
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
@@ -129,6 +133,56 @@
                                                     </div>
                         </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+<script>
+    function myFunction1() {
+                var x = document.getElementById("myInput");
+
+            if (x.type === "password" ) {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+    }
+
+    function myFunction2() {
+                var y = document.getElementById("myInput1");
+
+            if (y.type === "password" ) {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+    }
+
+    function myFunction3() {
+                var z = document.getElementById("confirm_password");
+
+            if (z.type === "password" ) {
+                z.type = "text";
+            } else {
+                z.type = "password";
+            }
+    }
+
+    $('#confirm_password').on('keyup', function() {
+    checkPassword();
+    });
+    
+    function checkPassword() {
+    var newPassword = $('#myInput1').val();
+    var confirmPassword = $('#confirm_password').val();
+    if (newPassword != confirmPassword) {
+        $('#error').html('Passwords do not match');
+        $('#pass-update-btn').attr('disabled', true);
+    } else {
+        $('#error').html('');
+        $('#pass-update-btn').attr('disabled', false);
+    }
+}
+
+
+</script>
 
 
                                                 

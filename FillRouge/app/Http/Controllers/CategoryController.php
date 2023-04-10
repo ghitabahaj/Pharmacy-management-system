@@ -33,7 +33,7 @@ class CategoryController extends Controller
     public function updateCategory(Request $request, $id)
     {
         $category_update = Category::find($id);
-        $Category_update->update($request->all());
+        $category_update->update($request->all());
         return redirect()->route('category');
       
     }

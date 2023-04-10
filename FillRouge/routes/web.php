@@ -39,6 +39,8 @@ Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProf
 Route::get('/category',[CategoryController::class,'DisplayCategories'])->name('category');
 Route::post('/addCategory',[CategoryController::class,'addCategory']);
 Route::get('deleteCategory/{id}', [CategoryController::class , 'destroyCat'])->name('deleteCategory');
+Route::post('/UpdateCategory/{id}',[CategoryController::class,'updateCategory'])->name('UpdateCategory');
+
 
 
 

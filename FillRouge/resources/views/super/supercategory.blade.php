@@ -77,7 +77,7 @@
                                             <div class="modal fade" id="update-category{{$loop->iteration}}">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
-                                                        <form action="" method="POST" enctype="multipart/form-data" name="form_update_city">
+                                                        <form action="{{ route('UpdateCategory',$category->id) }}" method="POST" enctype="multipart/form-data" name="form_update_city">
                                                         @csrf
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="add-title">Update Category</h5>
@@ -91,7 +91,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
-                                                                <button type="submit" name="updateCategory" class="btn btn-warning text-white" id="category-update-btn">Update</button>
+                                                                <button type="submit" name="updateCategory" class="btn btn-warning text-white" id="category-update-btn"> Update</button>
                                                             </div>
                                                         </form>
                                                     </div>

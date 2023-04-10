@@ -50,12 +50,7 @@
                         <form method="post"  style="width: 49%; height: 25em;" class="position-relative appointment-table rounded shadowborder" >
                            <p class="ms-3 mycolor fs-4 fw-bold">Last Added Pharmacies</p>
                            <p class="ms-3">Here's the last pharmacies that you added Recently  <br> More details available in @Pharmacy section.</p>
-                           <div class="card-body table-responsive position-relative" style="height: 15em; overflow: scroll;
-                           background-image:  url(img/icons/notfound.svg);
-                           background-repeat: no-repeat;
-                           background-size:15em;
-                           background-position: bottom;
-                           ">
+                           <div class="card-body table-responsive position-relative" style="height: 15em; overflow: scroll;">
                             <table class="table border-secondary text-center table-hover ">
                                 <thead>
                                     <td class="mycolor fw-bold ">Pharmacy number</td>
@@ -80,10 +75,7 @@
                         <form method="post" style="width: 49%; height: 25em;" class="position-relative appointment-table rounded shadowborder" >
                             <p class="ms-3 mycolor fs-4 fw-bold">Last Invoices</p>
                            <p class="ms-3">Here's a the last invoices with the name of the pahrmacy<br> and with more informations available in @Invoices Section.</p>
-                           <div class="card-body table-responsive position-relative" style="height: 15em; overflow: scroll; background-image:  url(img/icons/notfound.svg);
-                           background-repeat: no-repeat;
-                           background-size:15em;
-                           background-position: bottom;">
+                           <div class="card-body table-responsive position-relative" style="height: 15em; overflow: scroll;">
                            <table class="table border-secondary text-center table-hover">
                             <tr class="">
                                 <td class="mycolor fw-bold ">Invoice Number</td>

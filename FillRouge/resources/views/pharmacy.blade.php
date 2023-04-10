@@ -46,7 +46,7 @@
                                                     <div class="modal-dialog">
                                                         <div class="d-flex justify-content-around align-items-center bg-white p-3 rounded">
                                                                 <div >
-                                                                <img class="rounded-circle" src="/img/pharlog.png" width="100px" height="100px" alt="" srcset="">
+                                                                <img class="rounded-circle" src="/img/pharlog.png" width="100px" height="100px">
                                                                 </div>
                                                                 <div>
                                                                     <p>Pharmacy Name : <span class="fw-bold">{{$phar->name}}</span></p>

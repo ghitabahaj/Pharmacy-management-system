@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\PharmacyController;
 
 /*
@@ -40,6 +41,11 @@ Route::get('/category',[CategoryController::class,'DisplayCategories'])->name('c
 Route::post('/addCategory',[CategoryController::class,'addCategory']);
 Route::get('deleteCategory/{id}', [CategoryController::class , 'destroyCat'])->name('deleteCategory');
 Route::post('/UpdateCategory/{id}',[CategoryController::class,'updateCategory'])->name('UpdateCategory');
+Route::get('/medicine',[MedicineController::class,'DisplayMedicines'])->name('medicine');
+Route::post('/addMedicine',[MedicineController::class,'addMedicine']);
+
+
+
 
 
 
@@ -49,9 +55,7 @@ Route::post('/UpdateCategory/{id}',[CategoryController::class,'updateCategory'])
 Route::get('/superdashboard', function () {
     return view('super.superdashboard');
 })->name('superdash');
-Route::get('/medicine', function () {
-    return view('super.supermedicine');
-})->name('medicine');
+
 
 
 

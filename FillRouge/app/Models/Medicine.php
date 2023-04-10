@@ -15,11 +15,13 @@ class Medicine extends Model
         'label',
         'expiration_date',
         'quantity',
-        'price'
+        'price',
+        'Provider',
+        'category_id'
     ];
 
-    public function categories()
+    public function category()
     {
-        return $this->HasOne(Category::class);
+        return $this->hasOne(Category::class);
     }
 }

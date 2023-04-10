@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
 
@@ -15,13 +16,13 @@ class MedicineController extends Controller
         return redirect()->route('medicine');
     }
 
-    
     public function DisplayMedicines(){
-
-        $medicines=Medicine::all();
+        $medicines = Medicine::all();
         $categories = Category::all();
-        $countPhar= Medicine::count();
-       return view('super.supermedicine',compact('medicines','categories','countPhar'));  
-            
+        $countMed = Medicine::count();
+
+       return view('super.supermedicine',compact('medicines','categories','countMed'));  
+
+
    }
 }

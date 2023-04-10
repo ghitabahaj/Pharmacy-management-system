@@ -38,6 +38,9 @@ Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProf
 
 
 
+Route::get('/superdashboard', function () {
+    return view('super.superdashboard');
+})->name('suoerdash');
 
 
 

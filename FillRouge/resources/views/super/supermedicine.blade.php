@@ -9,7 +9,7 @@
                      <h3  class="fw-bold mb-5" style="color: #007A69;"><i class="uil uil-medkit me-2 fs-4" ></i>Medicines</h3>
                      <div class="w-100 d-flex justify-content-around m-3 align-items-center py-2 ">
                             <div>
-                                <label for="">Search : </label>
+                                <label>Search : </label>
                                 <input type="text" class="rounded border-0  px-4 ms-2" >
                             </div>
                          </div>

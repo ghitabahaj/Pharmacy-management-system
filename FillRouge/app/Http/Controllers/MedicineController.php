@@ -22,7 +22,24 @@ class MedicineController extends Controller
         $countMed = Medicine::count();
 
        return view('super.supermedicine',compact('medicines','categories','countMed'));  
+   }
 
+   public function destroyMedicine(Pharmacy $Pharmacy, $id)
+   {
+       Medicine::destroy($id);
+       return redirect()->route('medicine');
 
+   }
+
+   public function updateMedicine(Request $request,$id)
+   {
+
+      $updateMed=Medicine::find($id);
+      $input = $request->all();
+      $updatePhar->fill($input);
+
+      $updateMed->save();
+    
+       return redirect()->route('medicine');
    }
 }

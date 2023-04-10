@@ -42,20 +42,18 @@
                                                 </td>
                                             </tr>
 
-                                            <!-- view pharmacy info -->
+                                           
                                                                             
                                         <div class="modal fade" id="view-med{{$loop->iteration}}">
                                                     <div class="modal-dialog">
                                                         <div class="d-flex justify-content-around align-items-center bg-white p-3 rounded">
-                                                                <div >
-                                                                <img class="rounded-circle" src="/img/med.avif" width="100px" height="100px">
-                                                                </div>
+                                                        
                                                                 <div>
                                                                     <p>Medicine Name : <span class="fw-bold">{{$med->label}}</span></p>
                                                                     <p>Category : <span class="fw-bold">{{$med->category->label}}</span></p>
                                                                 </div>
                                                                 <div>
-                                                                <p>Price : <span class="fw-bold">{{$med->price}}</span></p>
+                                                                <p>Price : <span class="fw-bold">{{$med->price}} DH</span></p>
                                                                 <p>Quantity : <span class="fw-bold">{{$med->quantity}}</span></p>
                                                                 </div>
                                                                 <div>
@@ -66,7 +64,7 @@
                                                     </div>
                                                 </div>
 
-                                       <!-- remove pharmacy -->
+                       
 
                                          <div class="modal fade" id="remove-med{{$loop->iteration}}">
                                                     <div class="modal-dialog">
@@ -78,19 +76,19 @@
                                                                     </div>
                                                                     <div class="d-flex justify-content-around w-75 m-auto">
                                                                     <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
-                                                                    <button type="submit" class="btn text-white bg-danger"><a style=" text-decoration: none; color:white "  href="">remove</a></button>
+                                                                    <button type="submit" class="btn text-white bg-danger"><a style=" text-decoration: none; color:white "  href="{{route('destroyMedicine',$med->id)}}">remove</a></button>
                                                                     </div>
                                                             </form>
                                                         </div>
                                                     </div>
                                             </div>
 
-                                            <!-- edit phar -->
+                                      
 
                                             <div class="modal fade" id="update-med{{$loop->iteration}}">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <form action="" method="POST" enctype="multipart/form-data" name="form_add_med">
+                                                    <form action="{{ route('updateMedicine',$med->id) }}" method="POST" enctype="multipart/form-data" name="form_add_med">
                                                     @csrf
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="add-title">Update Medicine</h5>
@@ -99,28 +97,33 @@
                                                         <div class="modal-body">                                    
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Medicine Name</label>
-                                                                    <input type="text" name="label" class="form-control" id="name" value=""/>
+                                                                    <input type="text" name="label" class="form-control" id="name" value="{{$med->label}}"/>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Choose Medicine Category </label>
                                                                     <select class="form-select" name="category_id" id="category" required>
-                                                                            <option selected></option>
-                                                                          
-                                                                            <option value=""></option>
+                                                                            <option selected>{{$med->category->label}}</option>
+                                                                            @foreach ($categories as $cat) 
+                                                                            <option value="{{$cat->id}}">{{$cat->label}}</option>
+                                                                            @endforeach
                                                                           
                                                                     </select>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Price</label>
-                                                                    <input type="number" name="price" class="form-control" value=""/>
+                                                                    <input type="number" name="price" class="form-control" value="{{$med->price}}"/>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Expiration Date</label>
+                                                                    <input type="text" name="expiration_date" class="form-control"  value="{{$med->expiration_date}}"/>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Quantity</label>
-                                                                    <input type="number" name="quantity" class="form-control" value=""/>
+                                                                    <input type="number" name="quantity" class="form-control" value="{{$med->quantity}}"/>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Name of Provider</label>
-                                                                    <input type="text" name="provider" class="form-control"  value=""/>
+                                                                    <input type="text" name="provider" class="form-control"  value="{{$med->Provider}}"/>
                                                                 </div>
                                                                 
                                                         </div>
@@ -144,7 +147,7 @@
                                     <div class="modal fade" id="modal-med">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <form action="{{ url('addMedicine') }}" method="POST" enctype="multipart/form-data" name="form_add_phar">
+                                                    <form action="{{ url('addMedicine') }}" method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="add-title">Add New Medicine</h5>

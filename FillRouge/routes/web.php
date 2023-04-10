@@ -43,6 +43,10 @@ Route::get('deleteCategory/{id}', [CategoryController::class , 'destroyCat'])->n
 Route::post('/UpdateCategory/{id}',[CategoryController::class,'updateCategory'])->name('UpdateCategory');
 Route::get('/medicine',[MedicineController::class,'DisplayMedicines'])->name('medicine');
 Route::post('/addMedicine',[MedicineController::class,'addMedicine']);
+Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
+Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
+
+
 
 
 

@@ -42,4 +42,11 @@ class MedicineController extends Controller
     
        return redirect()->route('medicine');
    }
+
+   public function lastMedicines(){
+    $lastMed = Medicine::latest()->take(4)->get();
+    $countMed= Medicine::count();
+
+    return view('super.superdashboard',compact('lastMed','countMed'));   
+   }
 }

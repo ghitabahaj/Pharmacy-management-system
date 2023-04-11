@@ -45,20 +45,8 @@ Route::get('/medicine',[MedicineController::class,'DisplayMedicines'])->name('me
 Route::post('/addMedicine',[MedicineController::class,'addMedicine']);
 Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
 Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
+Route::get('/superdashboard',[MedicineController::class,'lastMedicines'])->name('superdashboard');
 
-
-
-
-
-
-
-
-
-
-
-Route::get('/superdashboard', function () {
-    return view('super.superdashboard');
-})->name('superdash');
 
 
 

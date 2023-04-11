@@ -99,7 +99,7 @@
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Choose Pharmacy City / location </label>
                                                                     <select class="form-select" name="city_id" id="city" required>
-                                                                            <option value="{{$phar->city->id}" selected>{{$phar->city->name}}</option>
+                                                                            <option value="{{$phar->city->id}}" selected>{{$phar->city->name}}</option>
                                                                             @foreach ($cities as $city) 
                                                                             <option value="{{$city->id}}">{{$city->name}}</option>
                                                                             @endforeach

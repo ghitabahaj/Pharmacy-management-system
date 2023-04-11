@@ -16,9 +16,13 @@ return new class extends Migration
             $table->string('clientName');
             $table->float('total',8,4);
             $table->string('medicine_id');
+            $table->date('date');
+            $table->string('user_id');
             $table->foreign('medicine_id')
             ->references('id')->on('medicines');
             $table->timestamps();
+            $table->foreign('user_id')
+            ->references('id')->on('users');
         });
     }
 

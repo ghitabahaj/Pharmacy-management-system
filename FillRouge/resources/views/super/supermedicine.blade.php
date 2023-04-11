@@ -102,7 +102,7 @@
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Choose Medicine Category </label>
                                                                     <select class="form-select" name="category_id" id="category" required>
-                                                                            <option selected>{{$med->category->label}}</option>
+                                                                            <option value="{{$med->category->id}}" selected>{{$med->category->label}}</option>
                                                                             @foreach ($categories as $cat) 
                                                                             <option value="{{$cat->id}}">{{$cat->label}}</option>
                                                                             @endforeach

@@ -20,7 +20,7 @@
                         <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded border">
                             <div>
                          
-                                <h3 class="fs-2 mycolor">3</h3>
+                                <h3 class="fs-2 mycolor">{{$countMed}}</h3>
                                 <p class="fs-5 text-black">Medicines</p>
                             </div>
                             <i class="uil uil-users-alt fs-3 mycolor box rounded py-2  px-3 "></i>

@@ -46,7 +46,8 @@ class MedicineController extends Controller
    public function lastMedicines(){
     $lastMed = Medicine::latest()->take(4)->get();
     $countMed= Medicine::count();
-
-    return view('super.superdashboard',compact('lastMed','countMed'));   
+    $user=Auth::user()->id;
+    $invoices =$user->invoices ;
+    return view('super.superdashboard',compact('lastMed','countMed','invoices',));   
    }
 }

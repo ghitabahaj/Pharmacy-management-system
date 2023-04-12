@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GiveRoleController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\PharmacyController;
 
@@ -46,6 +47,12 @@ Route::post('/addMedicine',[MedicineController::class,'addMedicine']);
 Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
 Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
 Route::get('/superdashboard',[MedicineController::class,'lastMedicines'])->name('superdashboard');
+Route::get('/GiveRole',[GiveRoleController::class,'DispalyUsers'])->name('GiveRole');
+Route::get('deleteUser/{id}', [GiveRoleController::class , 'destroyUser'])->name('deleteUser');
+Route::post('ChangeRole/{id}', [GiveRoleController::class , 'ChangeRole'])->name('ChangeRole');
+
+
+
 
 
 

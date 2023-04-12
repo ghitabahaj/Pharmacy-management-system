@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('city_id');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->string('telephone');
             $table->integer('employees');
             $table->foreign('city_id')

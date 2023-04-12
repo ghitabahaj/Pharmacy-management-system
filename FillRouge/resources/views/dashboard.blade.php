@@ -20,7 +20,7 @@
                         <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded border">
                             <div>
                          
-                                <h3 class="fs-2 mycolor">3</h3>
+                                <h3 class="fs-2 mycolor">{{$superAdminCount}}</h3>
                                 <p class="fs-5 text-black">Super Admins</p>
                             </div>
                             <i class="uil uil-users-alt fs-3 mycolor box rounded py-2  px-3 "></i>
@@ -39,7 +39,7 @@
                     <div class="col-lg-3 col-md-5 col-11">
                         <div class="p-3  shadow-sm d-flex justify-content-around align-items-center rounded border"> 
                             <div>
-                                <h3 class="fs-2 mycolor">2</h3>
+                                <h3 class="fs-2 mycolor">{{$invoicesCount}}</h3>
                                 <p class="fs-5 text-black">Invoices</p>
                             </div>
                             <i class="uil uil-receipt fs-3 mycolor  rounded py-2  px-3 box"></i>
@@ -69,7 +69,7 @@
                             </table>
                            
                         </div>
-                        <button class="w-100 btn  position-absolute bottom-0 " style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;" name="allAppointment" type="submit"><a class="text-dark" style=" text-decoration: none;"  href="{{ route('pharmacy') }}">Show all Pharmacies</a> </button>
+                        <button class="w-100 btn  position-absolute bottom-0 " style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;" type="submit"><a class="text-dark" style=" text-decoration: none;"  href="{{ route('pharmacy') }}">Show all Pharmacies</a> </button>
                         
                         </form>
                         <form method="post" style="width: 49%; height: 25em;" class="position-relative appointment-table rounded shadowborder" >

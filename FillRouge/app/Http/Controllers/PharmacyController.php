@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
+use App\Models\User;
+use App\Models\Invoice;
 use App\Models\Pharmacy;
 use Illuminate\Http\Request;
-use App\Models\City;
 
 class PharmacyController extends Controller
 {
@@ -36,8 +38,12 @@ class PharmacyController extends Controller
     $lastPhar = Pharmacy::latest()->take(4)->get();
     $countPhar= Pharmacy::count();
     $countCities= City::count();
+    $superAdminCount = User::whereHas('role', function($query) {
+        $query->where('name', '=', 'super');
+    })->count();
+    $invoicesCount = Invoice::count();
 
-    return view('dashboard',compact('lastPhar','countPhar','countCities'));   
+    return view('dashboard',compact('lastPhar','countPhar','countCities','superAdminCount','invoicesCount'));   
    }
 
    public function updatePharmacy(Request $request,$id)

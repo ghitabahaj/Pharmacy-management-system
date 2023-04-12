@@ -29,7 +29,7 @@
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
                         class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="{{ route('Profile') }}">Update Account</a></button>
                 <button class="list-group-item list-group-item-action fw-bold text-danger"><i
-                        class="uil uil-users-alt fs-4 me-2 p-2 text-danger"></i>Give Roles</button> 
+                        class="uil uil-users-alt fs-4 me-2 p-2 text-danger"></i><a class="text-danger" style=" text-decoration: none;" href="{{ route('GiveRole') }}">Give Roles</a></button> 
      </form>
             
         </div>

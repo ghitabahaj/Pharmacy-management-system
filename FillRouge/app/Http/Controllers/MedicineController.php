@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
+use PHPOpenSourceSaver\JWTAuth\Contracts\Providers\Auth;
 
 class MedicineController extends Controller
 {
@@ -46,8 +47,6 @@ class MedicineController extends Controller
    public function lastMedicines(){
     $lastMed = Medicine::latest()->take(4)->get();
     $countMed= Medicine::count();
-    $user=Auth::user()->id;
-    $invoices =$user->invoices ;
-    return view('super.superdashboard',compact('lastMed','countMed','invoices',));   
+    return view('super.superdashboard',compact('lastMed','countMed'));   
    }
 }

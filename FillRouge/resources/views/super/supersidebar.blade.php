@@ -19,7 +19,7 @@
                 </div>
             <form class="list-group list-group-flush ">
                 <button class="list-group-item list-group-item-action  text-secondary "><i
-                        class="uil uil-chart-bar fs-4 me-2 p-2"></i><a style="text-decoration: none;" href="{{ route('super.superdashboard') }}">Dashboard</a></button>
+                        class="uil uil-chart-bar fs-4 me-2 p-2"></i><a class="text-secondary" style="text-decoration: none;" href="{{ route('superdashboard') }}">Dashboard</a></button>
                 <button   class="list-group-item list-group-item-action text-success   fw-bold"><i
                         class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i><a style=" text-decoration: none; color:green;" href="{{ route('medicine') }}">Medicine</a></button>
                 <button class="list-group-item list-group-item-action  fw-bold "><i
@@ -27,9 +27,9 @@
                         <button class="list-group-item list-group-item-action fw-bold"><i
                         class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i><a class="text-secondary" style=" text-decoration: none;" href="">Invoices</a></button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
-                        class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="">Update Account</a></button>
-                <button class="list-group-item list-group-item-action fw-bold text-danger"><i
-                        class="uil uil-users-alt fs-4 me-2 p-2 text-danger"></i>Give Roles</button> 
+                        class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="{{ route('UpdateProfile') }}">Update Account</a></button>
+                 <button class="list-group-item list-group-item-action fw-bold"><i
+                        class="uil uil-clinic-medical fs-4 me-2 p-2 text-danger"></i><a class="text-danger" style=" text-decoration: none;" href="">Pharmacy Status</a></button> 
      </form>
             
         </div>

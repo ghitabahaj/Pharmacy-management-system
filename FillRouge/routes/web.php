@@ -25,31 +25,58 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/addCity',[CityController::class,'addCity']);
-Route::get('/city',[CityController::class,'DisplayCities'])->name('city');
-Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete');
-Route::post('/addPharmacy',[PharmacyController::class,'addPharmacy']);
-Route::get('/pharmacy',[PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
-Route::get('deletePhar/{id}', [PharmacyController::class , 'destroyPharmacy'])->name('deletePhar');
-Route::post('UpdatePharmacy/{id}', [PharmacyController::class , 'updatePharmacy'])->name('UpdatePhar');
-Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
-Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('UpdateCity');
-Route::get('/Profile',[UserController::class,'index'])->name('Profile');
-Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
-Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
-Route::get('/category',[CategoryController::class,'DisplayCategories'])->name('category');
-Route::post('/addCategory',[CategoryController::class,'addCategory']);
-Route::get('deleteCategory/{id}', [CategoryController::class , 'destroyCat'])->name('deleteCategory');
-Route::post('/UpdateCategory/{id}',[CategoryController::class,'updateCategory'])->name('UpdateCategory');
-Route::get('/medicine',[MedicineController::class,'DisplayMedicines'])->name('medicine');
-Route::post('/addMedicine',[MedicineController::class,'addMedicine']);
-Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
-Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
-Route::get('/superdashboard',[MedicineController::class,'lastMedicines'])->name('superdashboard');
-Route::get('/GiveRole',[GiveRoleController::class,'DispalyUsers'])->name('GiveRole');
-Route::get('deleteUser/{id}', [GiveRoleController::class , 'destroyUser'])->name('deleteUser');
-Route::post('ChangeRole/{id}', [GiveRoleController::class , 'ChangeRole'])->name('ChangeRole');
+Route::middleware(['auth'])->group(function (){
+
+// admin Routes
+Route::middleware(['isAdmin'])->group(function(){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('/addCity',[CityController::class,'addCity']);
+    Route::get('/city',[CityController::class,'DisplayCities'])->name('city');
+    Route::get('delete/{id}', [CityController::class , 'destroyCity'])->name('delete');
+    Route::post('/addPharmacy',[PharmacyController::class,'addPharmacy']);
+    Route::get('/pharmacy',[PharmacyController::class,'DisplayPharmacies'])->name('pharmacy');
+    Route::get('deletePhar/{id}', [PharmacyController::class , 'destroyPharmacy'])->name('deletePhar');
+    Route::post('UpdatePharmacy/{id}', [PharmacyController::class , 'updatePharmacy'])->name('UpdatePhar');
+    Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
+    Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('UpdateCity');
+    Route::get('/Profile',[UserController::class,'index'])->name('Profile');
+    Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
+    Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
+    Route::post('ChangeRole/{id}', [GiveRoleController::class , 'ChangeRole'])->name('ChangeRole');
+    Route::get('deleteUser/{id}', [GiveRoleController::class , 'destroyUser'])->name('deleteUser');
+    Route::get('/GiveRole',[GiveRoleController::class,'DispalyUsers'])->name('GiveRole');
+
+});
+
+
+
+// super admin routes
+
+Route::middleware(['isSuper'])->group(function(){
+    Route::get('/category',[CategoryController::class,'DisplayCategories'])->name('category');
+    Route::post('/addCategory',[CategoryController::class,'addCategory']);
+    Route::get('deleteCategory/{id}', [CategoryController::class , 'destroyCat'])->name('deleteCategory');
+    Route::post('/UpdateCategory/{id}',[CategoryController::class,'updateCategory'])->name('UpdateCategory');
+    Route::get('/medicine',[MedicineController::class,'DisplayMedicines'])->name('medicine');
+    Route::post('/addMedicine',[MedicineController::class,'addMedicine']);
+    Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
+    Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
+    Route::get('/superdashboard',[MedicineController::class,'lastMedicines'])->name('superdashboard');
+    Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
+
+});
+   
+
+  
+    
+   
+
+
+});
+
+
+
+
 
 
 

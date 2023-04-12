@@ -15,7 +15,7 @@
                     </div>
 
                 <div class="d-flex justify-content-between">
-                    <p class="fs-5 ms-2 fw-bold">All Invoices()</p>
+                    <p class="fs-5 ms-2 fw-bold">All Invoices({{$countInvoices}})</p>
                     <button class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-invoice" ><i class="uil uil-plus text-white" ></i>&emsp; Add Invoice</button>
                 </div>
                     <div class="card-body table-responsive mt-2" style="height: 60vh; overflow: scroll;">
@@ -27,7 +27,7 @@
                                         <td class="mycolor fw-bold">Invoice's Total</td>                               
                                         <td class="mycolor fw-bold">Events</td>
                                     </thead>
-
+                                    @foreach ($invoices as $invoice) 
                                     <tr>  
                                         <td class="text-dark"></td>
                                         <td class="text-dark"></td>
@@ -55,8 +55,63 @@
                                                                         </div>
                                                                     </div>
                                      </div>
-                                       
-                    
+                      @endforeach
+                      <div class="modal fade" id="modal-invoice">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <form action="{{ url('CreateInvoice') }}" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="add-title">Create New Invoice</h5>
+                                                            <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+                                                        </div>
+                                                        <div class="modal-body">                                      
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Client Name</label>
+                                                                    <input type="text" name="client_name" class="form-control" />
+                                                                </div>
+                                                                <div class="mb-3" id="medicaments-container">
+                                                                <select name="medicaments[]" class="form-select">
+                                                                    <option value="">Select a medicament</option>
+                                                                    @foreach($medicaments as $medicament)
+                                                                        <option value="{{ $medicament->id }}">{{$medicament->label }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                                </div>
+                                                         </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+                                                            <button type="submit" name="saveInvoice" class="btn btn-primary">Save</button>
+                                                            <button  name="addMed" class="btn btn-secondary text-white" id="add-medicament-btn" onclick="event.preventDefault();"> Add Medicament</button>
+                                                            
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
 
+
+            <script>
+                
+                const medicamentsContainer = document.getElementById('medicaments-container');
+
+           
+                const addMedicamentBtn = document.getElementById('add-medicament-btn');
+
+       
+                addMedicamentBtn.addEventListener('click', () => {
+     
+                const newSelect = document.createElement('select');
+                newSelect.name = 'medicaments[]';
+                newSelect.className = 'form-select mt-2';
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Select a medicament';
+                newSelect.appendChild(defaultOption);
+
+                document.getElementById('medicaments-container').appendChild(newSelect);
+
+                });
+            </script>
 
 @endsection

@@ -69,6 +69,8 @@ Route::middleware(['isSuper'])->group(function(){
     Route::get('/status',[StatusController::class,'DisplayMyPharmacy'])->name('status');
     Route::post('ChangeStatus/{id}', [StatusController::class , 'ChangeStatus'])->name('ChangeStatus');
     Route::get('/invoice',[InvoiceController::class,'DisplayInvoices'])->name('invoice');
+    Route::post('/CreateInvoice',[InvoiceController::class,'saveInvoice'])->name('saveInvoice');
+
 
 });
 

@@ -10,7 +10,7 @@
                 </div>
 
                    <div>
-                   <a  class="btn w-100 btn-light my-3 mycolor button1 fs-6" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                   <a  class="btn w-100 btn-light my-3 fs-6" href="{{ route('logout') }}"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"> Log out</a>
                                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                        @csrf

@@ -14,7 +14,8 @@ class Pharmacy extends Model
         'name',
         'employees' ,
         'telephone',
-        'city_id'
+        'city_id',
+        'status'
 
     ];
 

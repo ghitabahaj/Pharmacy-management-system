@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StatusController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GiveRoleController;
 use App\Http\Controllers\MedicineController;
@@ -49,7 +50,6 @@ Route::middleware(['isAdmin'])->group(function(){
 });
 
 
-
 // super admin routes
 
 Route::middleware(['isSuper'])->group(function(){
@@ -62,9 +62,17 @@ Route::middleware(['isSuper'])->group(function(){
     Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
     Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
     Route::get('/superdashboard',[MedicineController::class,'lastMedicines'])->name('superdashboard');
+    Route::get('/Profile',[UserController::class,'index'])->name('Profile');
+    Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
     Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
+    Route::get('/status',[StatusController::class,'DisplayMyPharmacy'])->name('status');
+    Route::post('ChangeStatus/{id}', [StatusController::class , 'ChangeStatus'])->name('ChangeStatus');
+
+
 
 });
+
+// visitor routes
    
 
   

@@ -2,7 +2,15 @@
 
 @section('content')
 
-        @include('sidebar')
+            @if(Auth::user()->role_id == 1)
+
+                @include('sidebar')
+
+            @else
+
+            @include('super.supersidebar')
+            
+            @endif
 
     <section class="content_section" id="admin_settings_section">
     @if(session('success'))
@@ -93,6 +101,7 @@
                                                                          <input type="password" class="form-control" name="confirm_password" id="confirm_password">
                                                                          <input type="checkbox" onclick="myFunction3()" class="mt-1 me-1">Show Password
                                                                          <div id="error" class="text-danger"></div>  
+                                                                         </div> 
                                                             
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -102,7 +111,7 @@
                                                             </form>
                                                         </div>
                                                     </div>
-                                                </div>
+                        </div>
 
                      <!-- Change email -->
                      <div class="modal fade" id="update-email">

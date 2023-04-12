@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GiveRoleController;
 use App\Http\Controllers\MedicineController;
@@ -67,8 +68,7 @@ Route::middleware(['isSuper'])->group(function(){
     Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
     Route::get('/status',[StatusController::class,'DisplayMyPharmacy'])->name('status');
     Route::post('ChangeStatus/{id}', [StatusController::class , 'ChangeStatus'])->name('ChangeStatus');
-
-
+    Route::get('/invoice',[InvoiceController::class,'DisplayInvoices'])->name('invoice');
 
 });
 
@@ -88,13 +88,3 @@ Route::middleware(['isSuper'])->group(function(){
 
 
 
-
-
-
-
-
-
-
-Route::get('/invoice', function () {
-    return view('invoice');
-})->name('invoice');

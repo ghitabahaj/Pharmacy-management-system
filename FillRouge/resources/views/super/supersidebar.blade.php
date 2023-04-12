@@ -25,7 +25,7 @@
                 <button class="list-group-item list-group-item-action  fw-bold "><i
                         class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i><a class="text-warning" style=" text-decoration: none; " href="{{ route('category') }}">Category</a></button> 
                         <button class="list-group-item list-group-item-action fw-bold"><i
-                        class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i><a class="text-secondary" style=" text-decoration: none;" href="">Invoices</a></button>       
+                        class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i><a class="text-secondary" style=" text-decoration: none;" href="{{ route('invoice') }}">Invoices</a></button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
                         class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="{{ route('Profile') }}">Update Account</a></button>
                  <button class="list-group-item list-group-item-action fw-bold"><i

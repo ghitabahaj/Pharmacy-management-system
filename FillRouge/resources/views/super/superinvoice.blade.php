@@ -13,6 +13,19 @@
                         <input type="text" class="rounded border-0  px-4 ms-2" >
                        </div>
                     </div>
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
 
                 <div class="d-flex justify-content-between">
                     <p class="fs-5 ms-2 fw-bold">All Invoices({{$countInvoices}})</p>
@@ -23,18 +36,21 @@
                                     <thead>
                                         <td class="mycolor fw-bold ">Invoice's Number</td>
                                         <td class="mycolor fw-bold">Invoice's Date</td>
-                                        <td class="mycolor fw-bold">Invoice's Medicaments Nulber</td>
+                                        <td class="mycolor fw-bold">Invoice's Medicaments</td>
                                         <td class="mycolor fw-bold">Invoice's Total</td>                               
                                         <td class="mycolor fw-bold">Events</td>
                                     </thead>
                                     @foreach ($invoices as $invoice) 
                                     <tr>  
-                                        <td class="text-dark"></td>
-                                        <td class="text-dark"></td>
-                                        <td class="text-dark"></td>
-                                        <td class="text-dark"></td>
+                                        <td class="text-dark">{{$loop->iteration}}</td>
+                                        <td class="text-dark">{{$invoice->date}}</td>
                                         <td class="text-dark">
-                                            <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#view-invoice"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
+                                        @foreach ($invoice->Medicine as $medicine)
+                                            {{$medicine->label}} /
+                                        @endforeach
+                                        </td>
+                                        <td class="text-dark">{{$invoice->total}}</td>
+                                        <td class="text-dark">
                                             <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-invoice"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                         </td>
                                     </tr>  
@@ -49,7 +65,7 @@
                                                                                     </div>
                                                                                     <div class="d-flex justify-content-around w-75 m-auto">
                                                                                     <button type="submit" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
-                                                                                    <button type="submit" class="btn text-white bg-danger" id="session-save-btn"><a style=" text-decoration: none; color:white "  href="">remove</a></button>
+                                                                                    <button type="submit" class="btn text-white bg-danger" id="session-save-btn"><a style=" text-decoration: none; color:white "  href="{{route('deleteInvoice',$invoice->id)}}">remove</a></button>
                                                                                     </div>
                                                                             </form>
                                                                         </div>
@@ -59,7 +75,7 @@
                       <div class="modal fade" id="modal-invoice">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <form action="{{ url('CreateInvoice') }}" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{ url('CreateInvoice') }}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="add-title">Create New Invoice</h5>
@@ -68,50 +84,27 @@
                                                         <div class="modal-body">                                      
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Client Name</label>
-                                                                    <input type="text" name="client_name" class="form-control" />
+                                                                    <input type="text" name="clientName" class="form-control" />
                                                                 </div>
                                                                 <div class="mb-3" id="medicaments-container">
-                                                                <select name="medicaments[]" class="form-select">
+                                                                <select name="medicaments[]"  class="form-select" multiple>
                                                                     <option value="">Select a medicament</option>
                                                                     @foreach($medicaments as $medicament)
-                                                                        <option value="{{ $medicament->id }}">{{$medicament->label }}</option>
+                                                                      @if($medicament->quantity > 0)
+                                                                        <option value="{{ $medicament->id }}"> {{$medicament->label }}</option>
+                                                                       @endif
                                                                     @endforeach
                                                                 </select>
                                                                 </div>
                                                          </div>
                                                         <div class="modal-footer">
                                                             <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
-                                                            <button type="submit" name="saveInvoice" class="btn btn-primary">Save</button>
-                                                            <button  name="addMed" class="btn btn-secondary text-white" id="add-medicament-btn" onclick="event.preventDefault();"> Add Medicament</button>
-                                                            
+                                                            <button type="submit" name="saveInvoice" class="btn btn-primary">Save</button>                  
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
 
-
-            <script>
-                
-                const medicamentsContainer = document.getElementById('medicaments-container');
-
-           
-                const addMedicamentBtn = document.getElementById('add-medicament-btn');
-
-       
-                addMedicamentBtn.addEventListener('click', () => {
-     
-                const newSelect = document.createElement('select');
-                newSelect.name = 'medicaments[]';
-                newSelect.className = 'form-select mt-2';
-                const defaultOption = document.createElement('option');
-                defaultOption.value = '';
-                defaultOption.textContent = 'Select a medicament';
-                newSelect.appendChild(defaultOption);
-
-                document.getElementById('medicaments-container').appendChild(newSelect);
-
-                });
-            </script>
-
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
 @endsection

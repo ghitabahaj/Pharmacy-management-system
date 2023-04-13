@@ -2,19 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
-use PHPOpenSourceSaver\JWTAuth\Contracts\Providers\Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 class MedicineController extends Controller
 {
     public function addMedicine(Request $request){
-        $pharmacy = new Medicine();
+        $med = new Medicine();
         $input = $request->all();
-        $pharmacy->fill($input);
-        $pharmacy->save();
-        return redirect()->route('medicine');
+        $demandeDay = new DateTime($request->expiration_date);
+
+        // Get the current date and subtract one day
+        $mydate = (new DateTime())->modify('+30 day');
+
+        if ($demandeDay > $mydate) {
+            $med->fill($input);
+            $med->save();
+            return redirect()->route('medicine')->with('success','Medicine created successfully');
+        }else{
+            return redirect()->route('medicine')->with('error','Medicine created failed Expiration date is not available');
+        }
     }
 
     public function DisplayMedicines(){
@@ -45,8 +57,17 @@ class MedicineController extends Controller
    }
 
    public function lastMedicines(){
-    $lastMed = Medicine::latest()->take(4)->get();
+    $lastMed = Medicine::latest()->take(5)->get();
     $countMed= Medicine::count();
-    return view('super.superdashboard',compact('lastMed','countMed'));   
+    $userid = Auth::user()->id;
+    $user = User::find($userid);
+    $mypharmacy = $user->pharmacy;
+    $Employees = ($mypharmacy->employees);
+    $invoices = ($user->invoices)->take(5);
+    $countInvoices = ($user->invoices)->count();
+    
+    return view('super.superdashboard',compact('lastMed','countMed','Employees','invoices','countInvoices'));   
    }
+
+
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\City;
 use App\Models\User;
+use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -26,5 +27,9 @@ class Pharmacy extends Model
 
     public function User(){
         return $this->belongsTo(User::class);
+    }
+
+    public function invoices(){
+        return $this->hasMany(Invoice::class);
     }
 }

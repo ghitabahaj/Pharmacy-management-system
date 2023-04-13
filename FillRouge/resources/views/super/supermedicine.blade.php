@@ -13,6 +13,18 @@
                                 <input type="text" class="rounded border-0  px-4 ms-2" >
                             </div>
                          </div>
+                         @if(session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                         @endif
+                         @if(session('error'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                         @endif
                     
                         <div class="d-flex justify-content-between">
                             <p class="fs-5 ms-2 fw-bold">All Medicines({{$countMed}})</p>
@@ -26,6 +38,7 @@
                                                 <td class="mycolor fw-bold">Price</td>
                                                 <td class="mycolor fw-bold">Quantity</td>
                                                 <td class="mycolor fw-bold">Expiration Date</td>
+                                                <td class="mycolor fw-bold">Status</td>
                                                 <td class="mycolor fw-bold">Events</td>
                                             </thead> 
                                             <tr>
@@ -35,6 +48,13 @@
                                                 <td class="text-dark">{{$med->price}}</td>
                                                 <td class="text-dark">{{$med->quantity}}</td>
                                                 <td class="text-dark">{{$med->expiration_date}}</td>
+                                                <td class="text-dark">
+                                                @if($med->quantity > 0)
+                                                        In Stock
+                                                @else
+                                                      Out Of Stock
+                                                @endif
+                                                </td>
                                                 <td class="text-dark">
                                                     <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-med{{$loop->iteration}}" ><i class="text-white me-1 uil uil-pen"></i>Edit</button>
                                                     <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-med{{$loop->iteration}}" ><i class="text-dark me-1 uil uil-eye"></i>view</button>
@@ -124,6 +144,15 @@
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Name of Provider</label>
                                                                     <input type="text" name="provider" class="form-control"  value="{{$med->Provider}}"/>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Change Medicine's Status</label>
+                                                                    <select class="form-select" name="status" required>
+                                                                            <option value="{{ $med->status ? $med->status : null }}" selected>{{$med->status ? $med->status : 'No Informations'}}</option>
+                                                                            <option value="Out Of Stock">Out Of Stock</option>
+                                                                            <option value="In Stock">In Stock</option>
+
+                                                                    </select>
                                                                 </div>
                                                                 
                                                         </div>

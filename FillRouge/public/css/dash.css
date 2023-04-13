@@ -57,6 +57,10 @@
   #menu-toggle{
     cursor: pointer;
   }
+
+  .navbar { 
+    box-shadow: none !important;
+   }
  
   @media (min-width: 768px) {
     #sidebar-wrapper {

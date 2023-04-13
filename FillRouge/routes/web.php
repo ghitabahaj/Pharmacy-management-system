@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Medicine;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
@@ -47,7 +48,7 @@ Route::middleware(['isAdmin'])->group(function(){
     Route::post('ChangeRole/{id}', [GiveRoleController::class , 'ChangeRole'])->name('ChangeRole');
     Route::get('deleteUser/{id}', [GiveRoleController::class , 'destroyUser'])->name('deleteUser');
     Route::get('/GiveRole',[GiveRoleController::class,'DispalyUsers'])->name('GiveRole');
-
+    Route::get('/invoiceAdmin',[InvoiceController::class,'InvoicesAdmin'])->name('invoice');
 });
 
 
@@ -70,7 +71,7 @@ Route::middleware(['isSuper'])->group(function(){
     Route::post('ChangeStatus/{id}', [StatusController::class , 'ChangeStatus'])->name('ChangeStatus');
     Route::get('/invoice',[InvoiceController::class,'DisplayInvoices'])->name('invoice');
     Route::post('/CreateInvoice',[InvoiceController::class,'saveInvoice'])->name('saveInvoice');
-
+    Route::get('deleteInvoice/{id}', [InvoiceController::class , 'DestroyInvoice'])->name('deleteInvoice');
 
 });
 

@@ -17,12 +17,14 @@ class MedicineController extends Controller
         $input = $request->all();
         $demandeDay = new DateTime($request->expiration_date);
 
-        // Get the current date and subtract one day
+
         $mydate = (new DateTime())->modify('+30 day');
 
-        if ($demandeDay > $mydate) {
+        if ($demandeDay > $mydate && $request->quantity > 0) {
             $med->fill($input);
+            $med->status = "In Stock";
             $med->save();
+            $med->pharmacy()->attach($request->pharmacy_id);
             return redirect()->route('medicine')->with('success','Medicine created successfully');
         }else{
             return redirect()->route('medicine')->with('error','Medicine created failed Expiration date is not available');
@@ -33,8 +35,10 @@ class MedicineController extends Controller
         $medicines = Medicine::all();
         $categories = Category::all();
         $countMed = Medicine::count();
+        $userid = Auth::user()->id;
+        $user = User::find($userid);
 
-       return view('super.supermedicine',compact('medicines','categories','countMed'));  
+       return view('super.supermedicine',compact('medicines','categories','countMed','user'));  
    }
 
    public function destroyMedicine(Medicine $Medicine, $id)

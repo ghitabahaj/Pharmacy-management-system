@@ -42,8 +42,8 @@ class PharmacyController extends Controller
         $query->where('name', '=', 'super');
     })->count();
     $invoicesCount = Invoice::count();
-
-    return view('dashboard',compact('lastPhar','countPhar','countCities','superAdminCount','invoicesCount'));   
+    $invoices = Invoice::all();
+    return view('dashboard',compact('lastPhar','countPhar','countCities','superAdminCount','invoicesCount','invoices'));   
    }
 
    public function updatePharmacy(Request $request,$id)

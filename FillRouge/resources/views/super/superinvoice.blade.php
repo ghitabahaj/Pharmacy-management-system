@@ -49,13 +49,13 @@
                                             {{$medicine->label}} /
                                         @endforeach
                                         </td>
-                                        <td class="text-dark">{{$invoice->total}}</td>
+                                        <td class="text-dark">{{$invoice->total}} <span class="fw-bold">Dh</span></td>
                                         <td class="text-dark">
-                                            <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-invoice"><i class="text-white me-1 uil uil-trash"></i>remove</button>
+                                            <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-invoice{{$loop->iteration}}"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                         </td>
                                     </tr>  
                                     <!-- remove invoice -->
-                                    <div class="modal fade" id="remove-invoice">
+                                    <div class="modal fade" id="remove-invoice{{$loop->iteration}}">
                                                                     <div class="modal-dialog">
                                                                         <div class="modal-content">
                                                                             <form action="" class="p-3">
@@ -75,7 +75,7 @@
                       <div class="modal fade" id="modal-invoice">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <form action="{{ url('CreateInvoice') }}" method="post" enctype="multipart/form-data">
+                                                    <form action="{{ url('CreateInvoice') }}" method="post" enctype="multipart/form-data" id="invoice-form">
                                                     @csrf
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="add-title">Create New Invoice</h5>
@@ -85,16 +85,19 @@
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Client Name</label>
                                                                     <input type="text" name="clientName" class="form-control" />
-                                                                </div>
+                                                                    <div class="invalid-feedback mt-2">RZRRR</div>
+                                                                </div>                                                        
                                                                 <div class="mb-3" id="medicaments-container">
-                                                                <select name="medicaments[]"  class="form-select" multiple>
-                                                                    <option value="">Select a medicament</option>
+                                                                    <label class="form-label">Select a medicament and enter the quantity</label>
                                                                     @foreach($medicaments as $medicament)
-                                                                      @if($medicament->quantity > 0)
-                                                                        <option value="{{ $medicament->id }}"> {{$medicament->label }}</option>
-                                                                       @endif
+                                                                        @if($medicament->quantity > 0)
+                                                                            <div class="mb-2">
+                                                                                    <input type="checkbox" name="medicaments[]" value="{{ $medicament->id }}" class="form-check-input medicament-checkbox" />
+                                                                                    <label class="form-check-label">{{ $medicament->label }}</label>
+                                                                                <input type="number" name="quantities[]" class="form-control " min="1" max="{{ $medicament->quantity }}" />
+                                                                            </div>
+                                                                        @endif
                                                                     @endforeach
-                                                                </select>
                                                                 </div>
                                                          </div>
                                                         <div class="modal-footer">
@@ -107,4 +110,55 @@
                                         </div>
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+            <script>
+
+                // document.querySelector('#invoice-form').addEventListener('submit', function(event) {
+
+                //     var clientNameInput = document.querySelector('input[name="clientName"]');
+
+                //     if (clientNameInput.value.trim() === '') {
+                //         event.preventDefault(); 
+                //         clientNameInput.classList.add('is-invalid');
+                //         clientNameInput.parentElement.querySelector('.invalid-feedback').innerText = 'The client name field is required.'; 
+                //     }
+                //     else {
+                //         clientNameInput.classList.remove('is-invalid'); 
+                //         clientNameInput.parentElement.querySelector('.invalid-feedback').innerText = '';
+                //     }
+
+                //     var medicamentCheckboxes = document.querySelectorAll('input[name="medicaments[]"]');
+                //     var quantityInputs = document.querySelectorAll('input[name="quantities[]"]');
+                //     var atLeastOneChecked = false;
+
+                //     for (var i = 0; i < medicamentCheckboxes.length; i++) {
+                //         var medicamentCheckbox = medicamentCheckboxes[i];
+                //         var quantityInput = quantityInputs[i];
+
+                //         if (medicamentCheckbox.checked) {
+                //           atLeastOneChecked = true;
+
+                //         if (quantityInput.value.trim() === '') {
+                //             event.preventDefault(); 
+                //             medicamentCheckbox.classList.add('is-invalid'); 
+                //             quantityInput.classList.add('is-invalid');
+                //             medicamentCheckbox.parentElement.querySelector('.invalid-feedback').innerText = 'Please enter the quantity.'; 
+                //         } else {
+                //             medicamentCheckbox.classList.remove('is-invalid'); 
+                //             quantityInput.classList.remove('is-invalid'); 
+                //             medicamentCheckbox.parentElement.querySelector('.invalid-feedback').innerText = ''; 
+                //         }
+                //         }
+                //     }
+                //     if (!atLeastOneChecked) {
+                //         event.preventDefault(); 
+                //         medicamentCheckboxes[0].classList.add('is-invalid'); 
+                //         medicamentCheckboxes[0].parentElement.querySelector('.invalid-feedback').innerText = 'Please select at least one medication.'; 
+                //     } else {
+                //         medicamentCheckboxes[0].classList.remove('is-invalid'); 
+                //         medicamentCheckboxes[0].parentElement.querySelector('.invalid-feedback').innerText = ''; 
+                //     }
+                //     });
+    
+       </script> 
+
 @endsection

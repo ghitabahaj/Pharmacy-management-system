@@ -3,15 +3,15 @@
 @section('content')
 
       @include('super.supersidebar')
-      <section id="status" class="container-fluid">
+<section id="status" class="container-fluid">
 
-<h3  class="fw-bold mb-5" style="color: #007A69;"><i class="uil uil-exchange-alt me-2 fs-4" ></i>Pharmacy's Status</h3>
-<div class="w-100 d-flex justify-content-around m-3 align-items-center py-2 ">
-       <div>
-           <label for="">Search : </label>
-           <input type="text" class="rounded border-0  px-4 ms-2" >
-       </div>
-    </div>
+                <h3  class="fw-bold mb-5" style="color: #007A69;"><i class="uil uil-exchange-alt me-2 fs-4" ></i>Pharmacy's Status</h3>
+                <div class="w-100 d-flex justify-content-around m-3 align-items-center py-2 ">
+                    <div>
+                        <label for="">Search : </label>
+                        <input type="text" class="rounded border-0  px-4 ms-2" >
+                    </div>
+                    </div>
 
 
     <div class="card-body table-responsive mt-2" style="height: 60vh; overflow: scroll;">

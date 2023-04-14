@@ -72,7 +72,7 @@
                         <button class="w-100 btn  position-absolute bottom-0 " style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;" type="submit"><a class="text-dark" style=" text-decoration: none;"  href="{{ route('pharmacy') }}">Show all Pharmacies</a> </button>
                         
                         </form>
-                        <form method="post" style="width: 49%; height: 25em;" class="position-relative appointment-table rounded shadowborder" >
+                        <form method="get" style="width: 49%; height: 25em;" class="position-relative appointment-table rounded shadowborder" >
                             <p class="ms-3 mycolor fs-4 fw-bold">Last Invoices</p>
                            <p class="ms-3">Here's a the last invoices with the name of the pahrmacy<br> and with more informations available in @Invoices Section.</p>
                            <div class="card-body table-responsive position-relative" style="height: 15em; overflow: scroll;">
@@ -80,12 +80,22 @@
                             <tr class="">
                                 <td class="mycolor fw-bold ">Invoice Number</td>
                                 <td class="mycolor fw-bold">Pharmacy Name</td>
-                                <td class="mycolor fw-bold">Date & Time</td>
+                                <td class="mycolor fw-bold">Date</td>
+                                <td class="mycolor fw-bold">Total</td>
+
                                 </tr>
+                                @foreach ($invoices as $invoice) 
+                                            <tr>
+                                            <td class="text-dark">{{$loop->iteration}}</td>
+                                            <td class="text-dark">{{$invoice->User->Pharmacy->name}}</td>
+                                            <td class="text-dark">{{$invoice->date}}</td>
+                                            <td class="text-dark">{{$invoice->total}} <span class="fw-bold">Dh</span></td>
+                                           </tr>
+                                @endforeach
                             
                            </table>
                         </div>
-                        <button class="w-100 btn position-absolute bottom-0" style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;"  name="allSessions" type="submit"> <a class="text-dark" style=" text-decoration: none;"  href="">Show all Invoices</a></button>
+                        <button class="w-100 btn position-absolute bottom-0" style="color:#007A69;  border: 1px solid #CCF2E5; background-color:#CCF2E5;" type="submit"> <a class="text-dark" style=" text-decoration: none;"  href="{{ route('invoiceAdmin') }}">Show all Invoices</a></button>
                         </form>
                   </section>
                 </section>

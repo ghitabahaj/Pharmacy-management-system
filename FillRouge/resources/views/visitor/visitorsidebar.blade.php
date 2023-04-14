@@ -2,7 +2,7 @@
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center d-flex flex-column py-4 fs-5 border-bottom mt-5">
                 <div class="d-flex align-items-center">
-                    <img src="/img/user.png" width="40px" class="rounded-circle me-3" >
+                    <img src="/img/user.png" width="40px" class="rounded-circle me-3">
                     <div>
                         <p style="margin:-5px;" class="fs-6"> {{ Auth::user()->name }}</p>
                         <p class="text-secondary fs-6"> {{ Auth::user()->email }}</p>
@@ -10,7 +10,7 @@
                 </div>
 
                    <div>
-                   <a  class="btn w-100 btn-light my-3  fs-6" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                   <a  class="btn w-100 btn-light my-3 fs-6" href="{{ route('logout') }}"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"> Log out</a>
                                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                        @csrf
@@ -19,17 +19,16 @@
                 </div>
             <form class="list-group list-group-flush ">
                 <button class="list-group-item list-group-item-action  text-secondary "><i
-                        class="uil uil-chart-bar fs-4  p-2"></i><a class="text-secondary" style="text-decoration: none;" href="{{ route('dashboard') }}">Dashboard</a></button>
-                <button   class="list-group-item list-group-item-action text-success   fw-bold"><i
-                        class="uil uil-heart-medical me-2 fs-4 p-2 text-success" ></i><a style=" text-decoration: none; color:green;" href="{{ route('pharmacy') }}">Pharmacy</a></button>
+                        class="uil uil-chart-bar fs-4 me-2 p-2"></i><a class="text-secondary" style="text-decoration: none;" href="{{ route('visitordashboard') }}">Dashboard</a></button>
                 <button class="list-group-item list-group-item-action  fw-bold "><i
-                        class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i><a class="text-warning" style=" text-decoration: none; " href="{{ route('city') }}">City</a></button> 
+                        class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i><a class="text-warning" style=" text-decoration: none; " href="{{ route('viewPharmacy') }}">Pharmacies</a></button> 
                         <button class="list-group-item list-group-item-action fw-bold"><i
-                        class="uil uil-receipt fs-4 me-2 p-2 text-secondary"></i><a class="text-secondary" style=" text-decoration: none;" href="{{ route('invoiceAdmin') }}">Invoices</a></button>       
+                        class="uil uil-capsule fs-4 me-2 p-2 text-danger"></i><a class="text-danger" style=" text-decoration: none;" href="">Request a Medicine</a></button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
                         class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="{{ route('Profile') }}">Update Account</a></button>
-                <button class="list-group-item list-group-item-action fw-bold text-danger"><i
-                        class="uil uil-users-alt fs-4 me-2 p-2 text-danger"></i><a class="text-danger" style=" text-decoration: none;" href="{{ route('GiveRole') }}">Give Roles</a></button> 
+                <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
+                        class="uil uil-building me-2 fs-4 p-2 text-success"></i><a class="text-success" style=" text-decoration: none;" href="">Choose Your City</a></button>        
+                        
      </form>
             
         </div>

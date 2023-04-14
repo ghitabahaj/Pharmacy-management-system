@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class isSuper
+class isVisitor
 {
     /**
      * Handle an incoming request.
@@ -15,17 +15,17 @@ class isSuper
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->role_id == 2) {
+        if (auth()->user()->role_id == 3) {
 
             return $next($request);
         }
         else {
             // then redirect his dashboard based on his actual role
-            if (auth()->user()->role_id == 3) {
-                return redirect('visitordashboard');
-            }
-            else if (auth()->user()->role_id == 1) {
+            if (auth()->user()->role_id == 1) {
                 return redirect('dashboard');
+            }
+            else if (auth()->user()->role_id == 2) {
+                return redirect('superdashboard');
             }
         };
     }

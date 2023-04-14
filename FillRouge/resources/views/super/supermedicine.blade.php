@@ -151,10 +151,9 @@
                                                                             <option value="{{ $med->status ? $med->status : null }}" selected>{{$med->status ? $med->status : 'No Informations'}}</option>
                                                                             <option value="Out Of Stock">Out Of Stock</option>
                                                                             <option value="In Stock">In Stock</option>
-
                                                                     </select>
                                                                 </div>
-                                                                
+                                                    
                                                         </div>
                                                         <div class="modal-footer">
                                                             <a href="#" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
@@ -211,6 +210,11 @@
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Name Of Provider</label>
                                                                     <input type="text" name="Provider" class="form-control" />
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Name of The Pharmacy</label>
+                                                                    <input type="hidden" name="pharmacy_id" class="form-control"  value="{{$user->pharmacy->id}}"/>
+                                                                    <input type="text" name="pharmacy" class="form-control"  value="{{$user->pharmacy->name}}" disabled/>
                                                                 </div>
 
                                                                 

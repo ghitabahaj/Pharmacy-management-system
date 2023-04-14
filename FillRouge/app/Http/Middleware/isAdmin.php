@@ -23,7 +23,7 @@ class isAdmin
     else {
         // then redirect his dashboard based on his actual role
         if (auth()->user()->role_id == 3) {
-            echo ' rak amine manyana ';
+            return redirect('visitordashboard');
         }
         else if (auth()->user()->role_id == 2) {
             return redirect('superdashboard');

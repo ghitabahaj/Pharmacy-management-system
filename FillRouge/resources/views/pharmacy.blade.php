@@ -35,7 +35,7 @@
                                                 <td class="text-dark">{{$phar->telephone}}</td>
                                                 <td class="text-dark">
                                                     <button class="btn btn-warning text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#update-phar{{$loop->iteration}}" id="update-btn"><i class="text-white me-1 uil uil-pen"></i>Edit</button>
-                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-phar{{$loop->iteration}}" id="view-doctor-btn"><i class="text-dark me-1 uil uil-eye"></i>view</button>
+                                                    <button class="btn btn-light rounded-pill" data-bs-toggle="modal" data-bs-target="#view-phar{{$loop->iteration}}"><i class="text-dark me-1 uil uil-eye"></i>view</button>
                                                     <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#remove-phar{{$loop->iteration}}" id="remove-btn"><i class="text-white me-1 uil uil-trash"></i>remove</button>
                                                 </td>
                                             </tr>

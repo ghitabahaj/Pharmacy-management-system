@@ -6,6 +6,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GiveRoleController;
 use App\Http\Controllers\MedicineController;
@@ -48,7 +49,7 @@ Route::middleware(['isAdmin'])->group(function(){
     Route::post('ChangeRole/{id}', [GiveRoleController::class , 'ChangeRole'])->name('ChangeRole');
     Route::get('deleteUser/{id}', [GiveRoleController::class , 'destroyUser'])->name('deleteUser');
     Route::get('/GiveRole',[GiveRoleController::class,'DispalyUsers'])->name('GiveRole');
-    Route::get('/invoiceAdmin',[InvoiceController::class,'InvoicesAdmin'])->name('invoice');
+    Route::get('/invoiceAdmin',[InvoiceController::class,'InvoicesAdmin'])->name('invoiceAdmin');
 });
 
 
@@ -76,6 +77,17 @@ Route::middleware(['isSuper'])->group(function(){
 });
 
 // visitor routes
+
+Route::middleware(['isVisitor'])->group(function(){
+    Route::get('/visitordashboard',[VisitorController::class,'PharmaciesNight'])->name('visitordashboard');
+    Route::get('/Profile',[UserController::class,'index'])->name('Profile');
+    Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
+    Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
+    Route::get('/viewPharmacy',[VisitorController::class,'PharmaciesMed'])->name('viewPharmacy');
+
+
+
+});
    
 
   

@@ -6,9 +6,13 @@
 
                 @include('sidebar')
 
-            @else
+            @elseif(Auth::user()->role_id == 2)
 
             @include('super.supersidebar')
+
+            @else 
+
+            @include('visitor.visitorsidebar')
             
             @endif
 

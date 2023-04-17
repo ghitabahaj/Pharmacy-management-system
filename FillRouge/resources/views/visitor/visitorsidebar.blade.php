@@ -23,7 +23,9 @@
                 <button class="list-group-item list-group-item-action  fw-bold "><i
                         class="uil uil-shop me-2 fs-4 p-2 text-warning" ></i><a class="text-warning" style=" text-decoration: none; " href="{{ route('viewPharmacy') }}">Pharmacies</a></button>       
                 <button  class="list-group-item list-group-item-action  fw-bold text-primary"><i
-                        class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="{{ route('Profile') }}">Update Account</a></button>     
+                        class="uil uil-user-square me-2 fs-4 p-2 text-primary"></i><a class="text-primary" style=" text-decoration: none;" href="{{ route('Profile') }}">Update Account</a></button> 
+                <button  class="list-group-item list-group-item-action  fw-bold text-success"><i
+                        class="uil uil-message me-2 fs-4 p-2 text-success"></i><a class="text-success" style=" text-decoration: none;" href="{{ route('viewRequest') }}">My Requests</a></button>     
                         
      </form>
             

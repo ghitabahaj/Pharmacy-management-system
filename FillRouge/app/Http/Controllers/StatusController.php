@@ -26,6 +26,7 @@ class StatusController extends Controller
      $user = User::find($userid);
      $mypharmacy = $user->pharmacy;
      
+     
      return view('super.status',compact('mypharmacy'));
 
 

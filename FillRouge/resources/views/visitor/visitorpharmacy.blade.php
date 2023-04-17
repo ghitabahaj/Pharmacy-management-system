@@ -116,7 +116,7 @@
                                                                 </div>
                                                                 <div class="mb-3">
                                                                 <label for="medicineQuantity" class="form-label">Medicine Quantity</label>
-                                                                <input type="number" class="form-control" name="medicineQuantity" placeholder="Enter The Medicine quantity" required>
+                                                                <input type="number" class="form-control" name="quantity" placeholder="Enter The Medicine quantity" required>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <input type="hidden" class="form-control" name="visitor_id" value="{{ Auth::user()->id }} ">

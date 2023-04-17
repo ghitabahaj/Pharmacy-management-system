@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Medicine;
 use Illuminate\Http\Request;
+use App\Models\MedicineRequest;
+use Illuminate\Support\Facades\Auth;
 
 class MedicineRequestController extends Controller
 {
@@ -21,7 +24,7 @@ class MedicineRequestController extends Controller
             if (!$medicineId && $newMedicineName) {
                 // Create a new medicine record
                 $medicine = new Medicine;
-                $medicine->name = $newMedicineName;
+                $medicine->label = $newMedicineName;
                 $medicine->save();
     
                 $medicineId = $medicine->id;
@@ -36,6 +39,15 @@ class MedicineRequestController extends Controller
             $medicineRequest->save();
     
             return redirect()->back()->with('success', 'Medicine request sent successfully!');
+        }
+
+        public function DisplayRequests(){
+            $user = Auth::user();
+            $mypharmacy = $user->pharmacy;
+            $requests = $mypharmacy->medicineRequests;
+            $request_count = $requests->count();
+            $unread_requests_count = $mypharmacy->medicineRequests()->where('is_read', false)->count();
+            return view('super.superRequests', compact('requests', 'request_count','unread_requests_count'));  
         }
 }
 

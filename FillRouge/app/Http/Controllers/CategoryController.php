@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -25,7 +26,7 @@ class CategoryController extends Controller
 
         $categories=Category::all();
         $countCategories= Category::count();
- 
+
        return view('super.supercategory',compact('categories','countCategories'));     
      
    }

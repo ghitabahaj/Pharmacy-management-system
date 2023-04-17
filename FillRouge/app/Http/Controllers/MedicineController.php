@@ -37,8 +37,11 @@ class MedicineController extends Controller
         $countMed = Medicine::count();
         $userid = Auth::user()->id;
         $user = User::find($userid);
+        $unread_requests_count = $mypharmacy->medicineRequests()->where('is_read', false)->count();
 
-       return view('super.supermedicine',compact('medicines','categories','countMed','user'));  
+        
+
+       return view('super.supermedicine',compact('medicines','categories','countMed','user','unread_requests_count'));  
    }
 
    public function destroyMedicine(Medicine $Medicine, $id)
@@ -69,6 +72,7 @@ class MedicineController extends Controller
     $Employees = ($mypharmacy->employees);
     $invoices = ($user->invoices)->take(5);
     $countInvoices = ($user->invoices)->count();
+   
     
     return view('super.superdashboard',compact('lastMed','countMed','Employees','invoices','countInvoices'));   
    }

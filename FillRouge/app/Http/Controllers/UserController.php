@@ -13,6 +13,7 @@ class UserController extends Controller
     {
       $data = Auth::user();
 
+
       return view('UpdateProfile',compact('data'));
     }
 

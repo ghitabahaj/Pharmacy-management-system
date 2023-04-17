@@ -19,6 +19,8 @@ class InvoiceController extends Controller
                 $countInvoices = ($user->invoices)->count();
                 $invoices = $user->invoices;
                 $medicaments = Medicine::all();
+
+
                 return view('super.superinvoice',compact('invoices','countInvoices','medicaments'));
             }
 
@@ -69,20 +71,6 @@ class InvoiceController extends Controller
 
                 
                 return back()->with('success', 'Invoice created successfully.');
-                // $userId = Auth::user()->id;
-                // $date = date('Y-m-d');
-                // $invoice = new Invoice;
-                // $invoice->date = $date;
-                // $invoice->user_id = $userId ;
-                // $invoice->clientName = $request->input('clientName');
-                // $medicamentIds = $request->input('medicaments', []);
-                // $medicines = Medicine::whereIn('id', $medicamentIds)->get();
-                // $total = $medicines->sum('price');
-                // $invoice->total = $total;
-                // $invoice->save();
-
-                // $invoice->Medicine()->attach($medicamentIds);
-                // return back()->with('success', 'Invoice created successfully.');
 
             }
 

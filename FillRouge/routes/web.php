@@ -74,6 +74,8 @@ Route::middleware(['isSuper'])->group(function(){
     Route::get('/invoice',[InvoiceController::class,'DisplayInvoices'])->name('invoice');
     Route::post('/CreateInvoice',[InvoiceController::class,'saveInvoice'])->name('saveInvoice');
     Route::get('deleteInvoice/{id}', [InvoiceController::class , 'DestroyInvoice'])->name('deleteInvoice');
+    Route::get('/showRequest',[MedicineRequestController::class,'DisplayRequests'])->name('showRequest');
+
 
 });
 
@@ -86,9 +88,7 @@ Route::middleware(['isVisitor'])->group(function(){
     Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
     Route::get('/viewPharmacy',[VisitorController::class,'PharmaciesMed'])->name('viewPharmacy');
     Route::post('/SendRequest',[MedicineRequestController::class,'storeRequest'])->name('sendRequest');
-
-
-
+    Route::get('/viewRequest',[VisitorController::class,'GetRequests'])->name('viewRequest');
 });
    
 

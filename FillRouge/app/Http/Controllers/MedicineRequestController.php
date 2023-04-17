@@ -46,8 +46,8 @@ class MedicineRequestController extends Controller
             $mypharmacy = $user->pharmacy;
             $requests = $mypharmacy->medicineRequests;
             $request_count = $requests->count();
-            $unread_requests_count = $mypharmacy->medicineRequests()->where('is_read', false)->count();
-            return view('super.superRequests', compact('requests', 'request_count','unread_requests_count'));  
+            MedicineRequest::where('is_read', false)->update(['is_read' => true]);
+            return view('super.superRequests', compact('requests', 'request_count'));  
         }
 }
 

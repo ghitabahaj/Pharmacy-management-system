@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Invoice;
 use App\Models\Category;
 use App\Models\Pharmacy;
+use App\Models\MedicineRequest;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -34,6 +35,11 @@ class Medicine extends Model
 
     public function pharmacy(){
         return $this->BelongsToMany(Pharmacy::class,'medicine_pharmacy' ,'medicine_id','pharmacy_id');
+    }
+
+    public function medicineRequests()
+    {
+        return $this->hasMany(MedicineRequest::class, 'medicine_id');
     }
 
     

@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Role;
 use App\Models\Invoice;
+use App\Models\MedicineRequest;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -55,5 +56,10 @@ class User extends Authenticatable
     }
     public function invoices(){
         return $this->hasMany(Invoice::class);
+    }
+
+    public function medicineRequests()
+    {
+        return $this->hasMany(MedicineRequest::class, 'visitor_id');
     }
 }

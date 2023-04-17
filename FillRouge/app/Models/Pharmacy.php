@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\User;
 use App\Models\Invoice;
 use App\Models\Medicine;
+use App\Models\MedicineRequest;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -36,5 +37,10 @@ class Pharmacy extends Model
 
     public function medicine(){
         return $this->BelongsToMany(Medicine::class,'medicine_pharmacy','pharmacy_id','medicine_id');
+    }
+
+    public function medicineRequests()
+    {
+        return $this->hasMany(MedicineRequest::class, 'pharmacy_id');
     }
 }

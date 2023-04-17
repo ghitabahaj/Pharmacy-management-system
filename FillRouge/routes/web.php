@@ -11,6 +11,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GiveRoleController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\PharmacyController;
+use App\Http\Controllers\MedicineRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,7 @@ Route::middleware(['isVisitor'])->group(function(){
     Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
     Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
     Route::get('/viewPharmacy',[VisitorController::class,'PharmaciesMed'])->name('viewPharmacy');
+    Route::post('/SendRequest',[MedicineRequestController::class,'storeRequest'])->name('sendRequest');
 
 
 

@@ -36,7 +36,7 @@ Technical specifications:
 * HTML 
 * CSS
 * BOOTSRAP
-* PHP
+* PHP-LARAVEL
 * JAVASCRIPT
 * MYSQL
 

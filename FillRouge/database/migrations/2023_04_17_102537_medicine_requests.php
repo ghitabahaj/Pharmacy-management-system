@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('visitor_id');
             $table->unsignedBigInteger('pharmacy_id');
-            $table->unsignedBigInteger('medicine_id');
+            $table->unsignedBigInteger('medicine_id')->nullabale();
             $table->integer('quantity');
             $table->boolean('is_handled')->default(false);
             $table->timestamps();

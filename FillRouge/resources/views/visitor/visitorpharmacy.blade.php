@@ -18,7 +18,13 @@
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        @endif       
+        @endif 
+        @if(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif      
         <div class="d-flex justify-content-between">
                         <p class="fs-5 ms-2 fw-bold">All Pharmacies({{$countPhar}})</p>
         </div>

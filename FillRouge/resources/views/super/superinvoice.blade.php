@@ -89,12 +89,12 @@
                                                                 </div>                                                        
                                                                 <div class="mb-3" id="medicaments-container">
                                                                     <label class="form-label">Select a medicament and enter the quantity</label>
-                                                                    @foreach($medicaments as $medicament)
-                                                                        @if($medicament->quantity > 0)
+                                                                    @foreach($mypharmacy->medicine as $med)
+                                                                        @if($med->quantity > 0)
                                                                             <div class="mb-2">
-                                                                                    <input type="checkbox" name="medicaments[]" value="{{ $medicament->id }}" class="form-check-input medicament-checkbox" />
-                                                                                    <label class="form-check-label">{{ $medicament->label }}</label>
-                                                                                <input type="number" name="quantities[]" class="form-control " min="1" max="{{ $medicament->quantity }}" />
+                                                                                    <input type="checkbox" name="medicaments[]" value="{{ $med->id }}" class="form-check-input medicament-checkbox" />
+                                                                                    <label class="form-check-label">{{ $med->label }}</label>
+                                                                                <input type="number" name="quantities[]" class="form-control " min="1" max="{{ $med->quantity }}" />
                                                                             </div>
                                                                         @endif
                                                                     @endforeach

@@ -24,6 +24,7 @@
                             <thead>
                                 <td class="mycolor fw-bold ">Request's Number</td>
                                 <td class="mycolor fw-bold">Requested Medicine</td>
+                                <td class="mycolor fw-bold">New Requested Medicine</td>
                                 <td class="mycolor fw-bold">Quantity</td>
                                 <td class="mycolor fw-bold">Pharmacy's Name</td>
                                 <td class="mycolor fw-bold"> Request Status</td>                               
@@ -32,7 +33,8 @@
                                 @foreach ($requests as $req) 
                             <tr>  
                                 <td class="text-dark">{{$loop->iteration}}</td>
-                                <td class="text-dark">{{$req->medicine->label}}</td>
+                                <td class="text-dark">{{$req->medicine->label ?? 'Nothing Here!'}}</td>
+                                <td class="text-dark">{{$req->medicine_name ?? 'Nothing Here!'}}</td>
                                 <td class="text-dark">{{$req->quantity}}</td>
                                 <td class="text-dark">{{$req->pharmacy->name}}</td>
                                 <td class="text-dark">
@@ -46,8 +48,12 @@
                                     <button class="btn btn-warning text-white rounded-pill" ><i class="text-white me-1 uil uil-sync"></i>Trait the Request</button>
                                 </td>
                             </tr>  
+                 <!-- Trait the request  -->
 
+                 
                                         @endforeach
+                   
+                                   
 
                         </table>
                 </div>  

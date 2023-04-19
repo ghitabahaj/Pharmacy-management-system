@@ -21,7 +21,7 @@ class InvoiceController extends Controller
                 $medicaments = Medicine::all();
 
 
-                return view('super.superinvoice',compact('invoices','countInvoices','medicaments'));
+                return view('super.superinvoice',compact('invoices','countInvoices','medicaments','mypharmacy'));
             }
 
 

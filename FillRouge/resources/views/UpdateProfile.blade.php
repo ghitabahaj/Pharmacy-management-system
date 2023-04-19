@@ -4,7 +4,7 @@
 
             @if(Auth::user()->role_id == 1)
 
-                @include('sidebar')
+            @include('sidebar')
 
             @elseif(Auth::user()->role_id == 2)
 

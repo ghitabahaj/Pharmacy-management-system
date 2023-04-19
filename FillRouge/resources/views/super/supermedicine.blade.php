@@ -42,7 +42,7 @@
                                                 <td class="mycolor fw-bold">Events</td>
                                             </thead> 
                                             <tr>
-                                            @foreach ($medicines as $med) 
+                                            @foreach ($mypharmacy->medicine as $med) 
                                                 <td class="text-dark">{{$med->label}}</td>
                                                 <td class="text-dark">{{$med->category->label}}</td>
                                                 <td class="text-dark">{{$med->price}}</td>

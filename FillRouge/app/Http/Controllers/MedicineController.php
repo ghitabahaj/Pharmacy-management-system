@@ -34,14 +34,15 @@ class MedicineController extends Controller
     public function DisplayMedicines(){
         $medicines = Medicine::all();
         $categories = Category::all();
-        $countMed = Medicine::count();
         $userid = Auth::user()->id;
         $user = User::find($userid);
+        $mypharmacy = $user->pharmacy;
+        $countMed = $mypharmacy->medicine->count();
   
 
         
 
-       return view('super.supermedicine',compact('medicines','categories','countMed','user'));  
+       return view('super.supermedicine',compact('medicines','categories','countMed','user','mypharmacy'));  
    }
 
    public function destroyMedicine(Medicine $Medicine, $id)

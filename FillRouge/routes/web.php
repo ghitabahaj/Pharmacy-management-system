@@ -44,7 +44,7 @@ Route::middleware(['isAdmin'])->group(function(){
     Route::post('UpdatePharmacy/{id}', [PharmacyController::class , 'updatePharmacy'])->name('UpdatePhar');
     Route::get('/dashboard',[PharmacyController::class,'lastPharmacies'])->name('dashboard');
     Route::post('/UpdateCity/{id}',[CityController::class,'updateCity'])->name('UpdateCity');
-    Route::get('/Profile',[UserController::class,'index'])->name('Profile');
+    Route::get('/ProfileAdmin',[UserController::class,'index'])->name('ProfileAdmin');
     Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
     Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
     Route::post('ChangeRole/{id}', [GiveRoleController::class , 'ChangeRole'])->name('ChangeRole');
@@ -66,7 +66,7 @@ Route::middleware(['isSuper'])->group(function(){
     Route::get('deleteMedicine/{id}', [MedicineController::class , 'destroyMedicine'])->name('destroyMedicine');
     Route::post('updateMedicine/{id}', [MedicineController::class , 'updateMedicine'])->name('updateMedicine');
     Route::get('/superdashboard',[MedicineController::class,'lastMedicines'])->name('superdashboard');
-    Route::get('/Profile',[UserController::class,'index'])->name('Profile');
+    Route::get('/ProfileSuper',[UserController::class,'index'])->name('ProfileSuper');
     Route::post('/EditChangePass',[UserController::class,'UpdatePassword'])->name('UpdatePass');
     Route::post('/updateProfile',[UserController::class,'update'])->name('UpdateProfile');
     Route::get('/status',[StatusController::class,'DisplayMyPharmacy'])->name('status');
@@ -89,6 +89,8 @@ Route::middleware(['isVisitor'])->group(function(){
     Route::get('/viewPharmacy',[VisitorController::class,'PharmaciesMed'])->name('viewPharmacy');
     Route::post('/SendRequest',[MedicineRequestController::class,'storeRequest'])->name('sendRequest');
     Route::get('/viewRequest',[VisitorController::class,'GetRequests'])->name('viewRequest');
+    Route::get('deleteRequest/{id}', [MedicineRequestController::class , 'DestroyRequest'])->name('deleteRequest');
+
 });
    
 
